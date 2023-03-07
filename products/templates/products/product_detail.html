@@ -28,14 +28,38 @@
             </div>
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="product-details-container mb-5 mt-md-5">
-                    <p class="mb-0">{{ product.name }}</p>
-                    <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
-                    {% if product.rating %}
-                        <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
-                    {% else %}
-                        <small class="text-muted">No Rating</small>
-                    {% endif %}
-                    <p class="mt-3">{{ product.description }}</p>
+                    <form action="{% url 'add_to_bag' product.id %}" method="POST">
+						{% csrf_token %}
+						<div class="content-body">
+
+							<h2 class="title">{{ product.name }}</h2>
+							<div class="rating-star">
+	                                <span>{{product.rating}} reviews</span>
+									
+								</div>
+
+
+							<div class="mb-3">
+								<var class="price h4">$ {{product.price}} </var>
+							</div>
+							<p>{{ product.description }}</p>
+							<hr>
+							<div class="row">
+								<div class="item-option-select">
+									<h6>Quantity</h6>
+									<div class="form-group w-100">
+                                        <div class="input-group">
+                                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        </div>
+                                    </div>
+								</div>
+							</div>
+
+							<hr>
+							<input type="submit" class="btn  btn-primary"> <span class="text">Add to Bag</span> <i class="fa fa-shopping-cart"></i>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+						</div> 
+					</form>
                 </div>
             </div>
         </div>
