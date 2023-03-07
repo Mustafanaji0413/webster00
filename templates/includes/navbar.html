@@ -12,9 +12,9 @@
               </button>
               <div class="dropdown-menu">
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-                <a href="{% url 'products' %}?category=price" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?category=rating" class="dropdown-item">By Rating</a>
-                <a href="{% url 'products' %}?category=wheight" class="dropdown-item">By Wheight</a>
+                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?sort=wheight&direction=asc" class="dropdown-item">By Wheight</a>
               </div>
             </div> 
           </div> 
