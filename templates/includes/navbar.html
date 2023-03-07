@@ -5,16 +5,18 @@
                 Home
             </a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                All Products
-            </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">By Price</a>
-                <a href="" class="dropdown-item ">By Rating</a>
-                <a href="" class="dropdown-item ">By Wheight</a>
+        <div class="col-lg col-sm col-md col-6 flex-grow-0">
+            <div class="category-wrap dropdown d-inline-block float-right">
+              <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                <i class="fa fa-bars"></i> All Categories
+              </button>
+              <div class="dropdown-menu">
                 <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-            </div>
-        </li>
+                <a href="{% url 'products' %}?category=price" class="dropdown-item">By Price</a>
+                <a href="{% url 'products' %}?category=rating" class="dropdown-item">By Rating</a>
+                <a href="{% url 'products' %}?category=wheight" class="dropdown-item">By Wheight</a>
+              </div>
+            </div> 
+          </div> 
     </ul>
 </div>

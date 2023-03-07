@@ -36,7 +36,7 @@
                                 {% endif %}
                                 <figcaption class="info-wrap">
                                     <div class="fix-height">
-                                        <a href="{{ product.get_url }}" class="title">{{ product.name }}</a>
+                                        <a href="{% url 'product_detail' product.id %}" class="title">{{ product.name }}</a>
                                         <div class="price-wrap mt-2">
                                             <span class="price">$ {{ product.price }}</span>
                                         </div> <!-- price-wrap.// -->
@@ -46,7 +46,7 @@
                                             <small class="text-muted">No Rating</small>
                                         {% endif %}
                                     </div>
-                                    <a href="#" class="btn btn-block btn-primary">View Details </a>
+                                    <a href="{% url 'product_detail' product.id %}" class="btn btn-block btn-primary">View Details </a>
                                 </figcaption>
                             </div>
                         </div>
