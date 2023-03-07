@@ -1,0 +1,57 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    {% if not cart_items %}
+	<h2 class="text-center">Your Shopping Cart is Empty</h2>
+	<br>
+	<div class="text-center">
+		<a href="{% url 'home ' %}" class="btn btn-primary">Continue Shopping</a>
+	</div>
+{% else %}
+<div class="row">
+	<aside class="col-lg-9">
+<div class="card">
+<table class="table table-borderless table-shopping-cart">
+<thead class="text-muted">
+<tr class="small text-uppercase">
+  <th scope="col">Product</th>
+  <th scope="col" width="120">Quantity</th>
+  <th scope="col" width="120">Price</th>
+  <th scope="col" class="text-right" width="200"> </th>
+</tr>
+</thead>
+<tbody>
+
+{% for cart_item in cart_items %}
+<tr>
+	<td>
+		<figure class="itemside align-items-center">
+			<div class="aside"><img src="{{ cart_item.product.images.url }}" class="img-sm"></div>
+			<figcaption class="info">
+				<a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
+				<p class="text-muted small">
+					{% if cart_item.variations.all %}
+						{% for item in cart_item.variations.all %}
+							{{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
+						{% endfor %}
+					{% endif %}
+				</p>
+			</figcaption>
+		</figure>
+	</td>
+	<td>
+{% endfor %}
+{% endif %}
+
+{% endblock %}
