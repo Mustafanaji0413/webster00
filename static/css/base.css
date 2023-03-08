@@ -111,6 +111,11 @@ body {
     border: 1px solid black;
 }
 
+.inc-button{
+    color: white;
+    background-color: #007bff;
+}
+
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
