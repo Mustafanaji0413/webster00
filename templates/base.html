@@ -98,7 +98,13 @@
               {% endif %}
               <a href="{% url 'view_bag' %}" class="widget-header pl-3 ml-3">
                 <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-                <span class="badge badge-pill badge-danger notify">0</span>
+                <span class="badge badge-pill badge-danger notify">
+                  {% if grand_total %}
+                  ${{ grand_total|floatformat:2 }}
+              {% else %}
+                  $0.00
+              {% endif %}
+                </span>
               </a>
 
             </div> 
@@ -109,9 +115,22 @@
   </header>
 
   {% if messages %}
-  <div class="message-container"></div>
-  {% endif %}
-
+        <div class="message-container">
+            {% for message in messages %}
+                {% with message.level as level %}
+                    {% if level == 40 %}
+                        {% include 'includes/toasts/toast_error.html' %}
+                    {% elif level == 30 %}
+                        {% include 'includes/toasts/toast_warning.html' %}
+                    {% elif level == 25 %}
+                        {% include 'includes/toasts/toast_success.html' %}
+                    {% else %}
+                        {% include 'includes/toasts/toast_info.html' %}
+                    {% endif %}
+                {% endwith %}
+            {% endfor %}
+        </div>
+    {% endif %}
   {% block page_header %}
   {% endblock %}
 
@@ -119,6 +138,9 @@
   {% endblock %}
 
   {% block postloadjs %}
+  <script type="text/javascript">
+      $('.toast').toast('show');
+  </script>
   {% endblock %}
 
 
