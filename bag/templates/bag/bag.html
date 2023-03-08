@@ -12,15 +12,17 @@
 
 {% block content %}
     <div class="overlay"></div>
-    {% if not cart_items %}
-	<h2 class="text-center">Your Shopping Cart is Empty</h2>
+    {% if not bag_items %}
+	<h2 class="text-center">Your Shopping bag is Empty</h2>
 	<br>
 	<div class="text-center">
 		<a href="{% url 'products' %}" class="btn btn-primary">Continue Shopping</a>
 	</div>
 {% else %}
+
 <div class="row">
 	<aside class="col-lg-9">
+		{{ bag_items }}
 <div class="card">
 <table class="table table-borderless table-shopping-cart">
 <thead class="text-muted">
@@ -33,17 +35,16 @@
 </thead>
 <tbody>
 
-{% for cart_item in cart_items %}
+{% for bag_item in bag_items %}
 <tr>
 	<td>
 		<figure class="itemside align-items-center">
-			<div class="aside"><img src="{{ cart_item.product.images.url }}" class="img-sm"></div>
+			<div class="aside"><img src="{{ bag_item.product.images.url }}" class="img-sm"></div>
 			<figcaption class="info">
-				<a href="{{ cart_item.product.get_url }}" class="title text-dark">{{ cart_item.product.product_name }}</a>
+				<a href="{{ bag_item.product.get_url }}" class="title text-dark">{{ bag_item.product.product_name }}</a>
 				<p class="text-muted small">
-					{% if cart_item.variations.all %}
-						{% for item in cart_item.variations.all %}
-							{{ item.variation_category | capfirst }} : {{ item.variation_value | capfirst }} <br>
+					{% if bag_item %}
+						{% for item in bag_item %}
 						{% endfor %}
 					{% endif %}
 				</p>
