@@ -83,7 +83,7 @@
                   {% if request.user.is_superuser %}
 
                   {% endif %}
-                  <a href="#">Dashboard</a> <span class="dark-transp"> | </span>
+                  <a href="{% url 'profile' %}">My Profile</a> <span class="dark-transp"> | </span>
                   <a href="{% url 'account_logout' %}"> Logout</a>
                   <a href="#"> Admin </a>
                 </div>
