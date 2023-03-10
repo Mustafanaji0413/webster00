@@ -1,4 +1,4 @@
-{% load static %}
+ {% load static %}
 
 <!doctype html>
 <html lang="en">
@@ -85,7 +85,7 @@
                   {% endif %}
                   <a href="{% url 'profile' %}">My Profile</a> <span class="dark-transp"> | </span>
                   <a href="{% url 'account_logout' %}"> Logout</a>
-                  <a href="#"> Admin </a>
+                  <a href="{% url 'add_product' %}"> Admin </a>
                 </div>
               </div>
               {% else %}
