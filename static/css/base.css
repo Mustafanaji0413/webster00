@@ -88,14 +88,20 @@ body {
 
 .logo-font {
     text-transform: uppercase;
+    color: black;
+}
+
+.head-1{
+    background-color: #00000082;
+    color: white;
 }
 
 .main-logo-link {
-    width: fit-content;
+    margin-left: 1px;
 }
 
 .shop-now-button {
-    background: black;
+    background: #007bff;
     color: white;
     min-width: 260px;
 }
@@ -339,7 +345,7 @@ input[name='q']::placeholder {
 
 
 /* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
+@media (min-width: 992px){
     .fixed-top-desktop-only {
         position: fixed;
         top: 0;
@@ -349,9 +355,9 @@ input[name='q']::placeholder {
     }
 
     .header-container {
-        padding-top: 164px;
+        padding-top: 80px;
     }
-}
+} 
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
