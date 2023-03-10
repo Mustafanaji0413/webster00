@@ -34,14 +34,17 @@
 
 							<h2 class="title">{{ product.name }}</h2>
 							<div class="rating-star">
-	                                <span>{{product.rating}} reviews</span>
-									
+	                                <span>{{product.rating}} reviews</span>								
 								</div>
-
-
 							<div class="mb-3">
 								<var class="price h4">$ {{product.price}} </var>
 							</div>
+                            {% if request.user.is_superuser %}
+                             <small class="ml-3">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                            <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                            </small>
+                            {% endif %}
 							<p>{{ product.description }}</p>
 							<hr>
 							<div class="row">
