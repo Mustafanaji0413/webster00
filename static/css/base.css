@@ -96,6 +96,11 @@ body {
     color: white;
 }
 
+#check-check {
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
 .main-logo-link {
     margin-left: 1px;
 }
