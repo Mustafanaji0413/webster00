@@ -353,15 +353,37 @@ input[name='q']::placeholder {
 
 .footer{
     margin-top: 20px;
+    background-color: #00000082;
+    color: white;
+}
+
+.foot-head {
+    text-align: center;
+    margin-top: 10px;
 }
 
 .overlay-1 {
-    height: 50%;
+    height: 60%;
 	width: 100%;
     margin-top: 5%;
 	background: rgb(255, 255, 255);
-
 }
+
+.social-2{
+    padding-left: 12%;
+}
+
+.social-10{
+    margin-top: 10px;
+}
+
+/* Mailchimp CSS */
+#mc_embed_signup {
+    background: #00000082;
+    font: 14px Helvetica, Arial, sans-serif;
+    width: 600px;
+  }
+
 
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px){
@@ -424,3 +446,4 @@ input[name='q']::placeholder {
         padding: .25rem .5rem !important;
     }
 }
+
