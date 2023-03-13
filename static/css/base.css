@@ -349,6 +349,20 @@ input[name='q']::placeholder {
 }
 
 
+/* Footer */
+
+.footer{
+    margin-top: 20px;
+}
+
+.overlay-1 {
+    height: 50%;
+	width: 100%;
+    margin-top: 5%;
+	background: rgb(255, 255, 255);
+
+}
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px){
     .fixed-top-desktop-only {
