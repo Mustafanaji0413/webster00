@@ -4,6 +4,8 @@ from django.shortcuts import get_object_or_404
 from products.models import Product
 
 
+# Bag contents
+
 def bag_contents(request):
 
     bag_items = []
@@ -11,6 +13,8 @@ def bag_contents(request):
     product_count = 0
     bag = request.session.get('bag', {})
 
+    # Calculate total inc shipping etc
+  
     for item_id, item_data in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += item_data * product.price

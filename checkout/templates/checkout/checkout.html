@@ -14,6 +14,10 @@
 </div>
 {% endblock %}
 
+<!-- Checkout page start -->
+
+
+<!-- Page header -->
 {% block content %}
 <div class="overlay"></div>
 <div class="container">
@@ -25,6 +29,8 @@
         </div>
     </div>
 
+    <!-- Order summary -->
+
     <div class="row">
         <div class="col-12 col-lg-6 order-lg-last mb-5">
             <p class="text-muted">Order Summary ({{ product_count }})</p>
@@ -34,6 +40,9 @@
                 </div>
 
             </div>
+
+            <!-- Product name -->
+
             {% for item in bag_items %}
             <div class="card">
                 <div class="col-2 mt-3 mb-1">
@@ -45,6 +54,9 @@
                         {% endif %}
                     </a>
                 </div>
+
+                <!-- Item product info -->
+
                 <div class="col-7">
                     <p class="my-0"><strong>{{ item.product.name }}</strong></p>
                     <p class="my-0 small text-muted">Qty: {{ item.quantity }}</p>
@@ -54,6 +66,7 @@
                 </div>
             </div>
             {% endfor %}
+
             <hr class="my-0">
             <div class="row text-black text-right">
                 <div class="col-7 offset-2">
@@ -68,6 +81,8 @@
                 </div>
             </div>
         </div>
+
+            <!-- Delivery info  -->
         <div class="col-12 col-lg-6">
             <p class="text-muted">Please fill out the form below to complete your order</p>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
@@ -91,6 +106,7 @@
                                 <p class="card-text mb-0">{{ order_form.county}}</p>
                             </div>
                         </div>
+                        <!-- Payment method -->
                         <div class="card">
                             <h5 class="card-header">Payment Method</h5>
                             <div class="card-body">
@@ -98,6 +114,9 @@
                             </div>
                         </div>
                     </aside>
+
+                    <!-- Save user delivery info is user is logged in -->
+
                     <div class="form-check form-check-inline float-right mr-0">
                         {% if user.is_authenticated %}
                         <label class="form-check-label" id="check-check" for="id-save-info">Save this delivery
