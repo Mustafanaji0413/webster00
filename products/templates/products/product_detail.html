@@ -2,94 +2,203 @@
 {% load static %}
 
 {% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
+<div class="container header-container">
+    <div class="row">
+        <div class="col"></div>
     </div>
+</div>
 {% endblock %}
 
 {% block content %}
-    <div class="overlay"></div>
-    <!-- Product detail info -->
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
-                <div class="image-container my-5">
-                    <!-- Product image -->
-                    {% if product.image %}
-                        <a href="{{ product.image.url }}" target="_blank">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
-                        </a>
-                    {% endif %}
-                </div>
+<div class="overlay"></div>
+<!-- Product detail info -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-4 offset-lg-2">
+            <div class="image-container my-5">
+                <!-- Product image -->
+                {% if product.image %}
+                <a href="{{ product.image.url }}" target="_blank">
+                    <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
+                </a>
+                {% else %}
+                <a href="">
+                    <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }}">
+                </a>
+                {% endif %}
             </div>
-            <!-- Product name/price and rating -->
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="product-details-container mb-5 mt-md-5">
-                    <form action="{% url 'add_to_bag' product.id %}" method="POST">
-						{% csrf_token %}
-						<div class="content-body">
+        </div>
+        <!-- Product name/price and rating -->
+        <div class="col-12 col-md-6 col-lg-4">
+            <div class="product-details-container mb-5 mt-md-5">
+                <form action="{% url 'add_to_bag' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="content-body">
 
-							<h2 class="title">{{ product.name }}</h2>
-							<div class="rating-star">
-	                                <span>{{product.rating}} reviews<i class="fa fa-star" aria-hidden="true"></i></span>								
-								</div>
-							<div class="mb-3 mt-4">
-								<var class="price h4">$ {{product.price}} </var>
-							</div>
-                           
-							<p>{{ product.description }}</p>
-							<hr>
-							<div class="row">
-								<div class="item-option-select">
-									<h6>Quantity</h6>
-									<div class="form-group w-100">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                            <button class="decrement-qty btn inc-button rounded-0" 
+                        <h2 class="title">{{ product.name }}</h2>
+                        <div class="rating-star">
+                            <span>{{product.rating}} reviews<i class="fa fa-star" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="mb-3 mt-4">
+                            <var class="price h4">$ {{product.price}} </var>
+                        </div>
+
+                        <p>{{ product.description }}</p>
+                        <hr>
+                        <div class="row">
+                            <div class="item-option-select">
+                                <h6>Quantity</h6>
+                                <div class="form-group w-100">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <button class="decrement-qty btn inc-button rounded-0"
                                                 data-item_id="{{ product.id }}" id="decrement-qty_{{ product.id }}">
                                                 <span class="icon">
                                                     <i class="fas fa-minus"></i>
                                                 </span>
                                             </button>
                                         </div>
-                                            <input class="form-control qty_input" type="number" name="quantity" value="1" min="1" max="99"
-                                                data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <input class="form-control qty_input" type="number" name="quantity" value="1"
+                                            min="1" max="99" data-item_id="{{ product.id }}"
+                                            id="id_qty_{{ product.id }}">
 
-                                                <div class="input-group-append">
-                                                    <button class="increment-qty btn inc-button rounded-0"
-                                                        data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
-                                                        <span class="icon">
-                                                            <i class="fas fa-plus"></i>
-                                                        </span>
-                                                    </button>
-                                                </div>
-
+                                        <div class="input-group-append">
+                                            <button class="increment-qty btn inc-button rounded-0"
+                                                data-item_id="{{ product.id }}" id="increment-qty_{{ product.id }}">
+                                                <span class="icon">
+                                                    <i class="fas fa-plus"></i>
+                                                </span>
+                                            </button>
                                         </div>
+
                                     </div>
-								</div>
-							</div>
-							<hr>
-							<input type="submit" class="btn  btn-primary"> <span class="text">Add to Bag</span><i class="fa fa-shopping-cart"></i>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                             <!-- Delete products if user is superuser -->
-                             {% if request.user.is_superuser %}
-                             <small class="edit-remove">
-                            <a href="{% url 'edit_product' product.id %}">Edit</a> | 
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <input type="submit" class="btn  btn-primary"> <span class="text">Add to Bag</span><i
+                            class="fa fa-shopping-cart"></i>
+                        <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <!-- Delete products if user is superuser -->
+                        {% if request.user.is_superuser %}
+                        <small class="edit-remove">
+                            <a href="{% url 'edit_product' product.id %}">Edit</a> |
                             <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                            </small>
-                            {% endif %}
-						</div> 
-					</form>
-                </div>
+                        </small>
+                        {% endif %}
+                    </div>
+                </form>
             </div>
         </div>
     </div>
+
+    <!-- Write a review  -->
+
+    <div class="row">
+        <div class="col-md-9">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <h5>Write A Review</h5>
+                <div>
+                    <!-- Rating stars -->
+                    <label>Rate this product:</label>
+                    <br>
+                    <div class="rate">
+                        <input type="radio" name="rating" id="rating10" value="5" required /><label for="rating10"
+                            title="5"></label>
+                        <input type="radio" name="rating" id="rating9" value="4.5" required /><label for="rating9"
+                            title="4.5" class="half"></label>
+                        <input type="radio" name="rating" id="rating8" value="4" required /><label for="rating8"
+                            title="4"></label>
+                        <input type="radio" name="rating" id="rating7" value="3.5" required /><label for="rating7"
+                            title="3.5" class="half"></label>
+                        <input type="radio" name="rating" id="rating6" value="3" required /><label for="rating6"
+                            title="3"></label>
+                        <input type="radio" name="rating" id="rating5" value="2.5" required /><label for="rating5"
+                            title="2.5" class="half"></label>
+                        <input type="radio" name="rating" id="rating4" value="2" required /><label for="rating4"
+                            title="2"></label>
+                        <input type="radio" name="rating" id="rating3" value="1.5" required /><label for="rating3"
+                            title="1.5" class="half"></label>
+                        <input type="radio" name="rating" id="rating2" value="1" required /><label for="rating2"
+                            title="1"></label>
+                        <input type="radio" name="rating" id="rating1" value="0.5" required /><label for="rating1"
+                            title="0.5" class="half"></label>
+                    </div>
+                    <br>
+                    Review Title:
+                    <input type="text" class="form-control" name="subject">
+                    <br>
+                    Review:
+                    <textarea name="review" rows="4" class="form-control"></textarea>
+                    <br>
+                    {% if user.is_authenticated %}
+                    {% if product %}
+                    <input type="submit" value="Submit Review" class="btn btn-primary">
+                    {% else %}
+                    <p>You must purchase this product to post a review.</p>
+                    {% endif %}
+                    {% else %}
+                    <p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span>
+                    </p>
+                    {% endif %}
+                </div>
+            </form>
+            <br>
+            <header class="section-heading">
+                <span><h3>Customer Reviews</h3></span>
+                <div class="rating-star">
+                    <span>
+                        <i class="fa fa-star{% if single_product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}"
+                            aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 1.5 %}-o{% elif single_product.averageReview >= 1.5 and single_product.averageReview < 2 %}-half-o {% endif %}"
+                            aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 2.5 %}-o{% elif single_product.averageReview >= 2.5 and single_product.averageReview < 3 %}-half-o {% endif %}"
+                            aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 3.5 %}-o{% elif single_product.averageReview >= 3.5 and single_product.averageReview < 4 %}-half-o {% endif %}"
+                            aria-hidden="true"></i>
+                        <i class="fa fa-star{% if single_product.averageReview < 4.5 %}-o{% elif single_product.averageReview >= 4.5 and single_product.averageReview < 5 %}-half-o {% endif %}"
+                            aria-hidden="true"></i>
+                        <span>{{product.countReview}} Reviews</span>
+                    </span>
+                </div>
+
+            </header>
+
+            {% for review in reviews %}
+            <article class="box mb-3">
+                <div class="icontext w-100">
+
+                    <div class="text">
+                        <span class="date text-muted float-md-right">{{review.updated_at}} </span>
+                        <h6 class="mb-1">{{review.user.full_name}} </h6>
+                        <div class="rating-star">
+                            <span>
+                                <i class="fa fa-star{% if review.rating == 0.5 %}-half-o{% elif review.rating < 1 %}-o {% endif %}"
+                                    aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating == 1.5 %}-half-o{% elif review.rating < 2 %}-o {% endif %}"
+                                    aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating == 2.5 %}-half-o{% elif review.rating < 3 %}-o {% endif %}"
+                                    aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating == 3.5 %}-half-o{% elif review.rating < 4 %}-o {% endif %}"
+                                    aria-hidden="true"></i>
+                                <i class="fa fa-star{% if review.rating == 4.5 %}-half-o{% elif review.rating < 5 %}-o {% endif %}"
+                                    aria-hidden="true"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div> <!-- icontext.// -->
+                <div class="mt-3">
+                    <h6>{{review.subject}}</h6>
+                    <p>
+                        {{review.review}}
+                    </p>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+    </div> <!-- col.// -->
+</div> <!-- row.// -->
 {% endblock %}
 
 {% block postloadjs %}
