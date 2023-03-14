@@ -377,6 +377,9 @@ input[name='q']::placeholder {
     margin-top: 10px;
 }
 
+.edit-remove{
+    margin-left: 40%;
+}
 
 
 /* Mailchimp CSS */
