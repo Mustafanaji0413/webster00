@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.http import HttpResponseRedirect
 
 from .models import Product, Category, ReviewRating
 from .forms import ProductForm, ReviewForm
@@ -77,29 +78,28 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
+@login_required
 def submit_review(request, product_id):
-    url = request.META.get('HTTP_REFERER')
+    product = get_object_or_404(Product, pk=product_id)
+    userprofile = request.user.userprofile
+    review = ReviewRating.objects.filter(
+        user=userprofile, product=product
+    ).first()
     if request.method == 'POST':
-        try:
-            reviews = ReviewRating.objects.get(user__id=request.user.id, product__id=product_id)
-            form = ReviewForm(request.POST, instance=reviews)
+        action = ('submitted', 'updated')[review is not None]
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            form.instance.product_id = product_id
+            form.instance.user = userprofile
+            form.instance.ip = request.META.get('REMOTE_ADDR')
             form.save()
-            messages.success(request, 'Thank you! Your review has been updated.')
-            return redirect(url)
-        except ReviewRating.DoesNotExist:
-            form = ReviewForm(request.POST)
-            if form.is_valid():
-                data = ReviewRating()
-                data.subject = form.cleaned_data['subject']
-                data.rating = form.cleaned_data['rating']
-                data.review = form.cleaned_data['review']
-                data.ip = request.META.get('REMOTE_ADDR')
-                data.product_id = product_id
-                data.user_id = request.user.id
-                data.save()
-                messages.success(request, 'Thank you! Your review has been submitted.')
-                return redirect(url)
-
+            messages.success(
+                request, f'Thank you! Your review has been {action}.'
+            )
+            return redirect('home')
+    else:
+        form = ReviewForm(request.POST, request.FILES, instance=review)
+    return render(request, 'name-of-some-template.html', {'form': form})
 
 @login_required
 def add_product(request):

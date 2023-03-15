@@ -381,6 +381,12 @@ input[name='q']::placeholder {
     margin-left: 40%;
 }
 
+/* Review form */
+
+.review{
+    margin-top: 50px;
+}
+
 /* Mailchimp CSS */
 #mc_embed_signup {
     background: #00000082;

@@ -76,9 +76,10 @@
                             </div>
                         </div>
                         <hr>
-                        <input type="submit" class="btn  btn-primary"> <span class="text">Add to Bag</span><i
+                        <input type="submit" class="btn  btn-primary mb-3"> <span class="text">Add to Bag</span><i
                             class="fa fa-shopping-cart"></i>
                         <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        <br>
                         <!-- Delete products if user is superuser -->
                         {% if request.user.is_superuser %}
                         <small class="edit-remove">
@@ -94,8 +95,9 @@
 
     <!-- Write a review  -->
 
-    <div class="row">
+    <div class="ro review">
         <div class="col-md-9">
+            <h1>{{product.id}}</h1>
             <form action="{% url 'submit_review' product.id %}" method="POST">
                 {% csrf_token %}
                 <h5>Write A Review</h5>
@@ -132,12 +134,7 @@
                     Review:
                     <textarea name="review" rows="4" class="form-control"></textarea>
                     <br>
-                    {% if user.is_authenticated %}
                     <input type="submit" value="Submit Review" class="btn btn-primary">
-                    {% else %}
-                    <p>You must be logged in to post a review. <span><a href="{% url 'login' %}">Login now</a></span>
-                    </p>
-                    {% endif %}
                 </div>
             </form>
             <br>
