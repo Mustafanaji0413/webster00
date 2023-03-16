@@ -78,12 +78,6 @@ def product_detail(request, product_id):
     return render(request, 'products/product_detail.html', context)
 
 
-def wishlist(request):
-    """ A view to show individual products in the wishlist """
-
-    return render(request, 'products/wishlist.html')
-
-
 @login_required
 def submit_review(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
