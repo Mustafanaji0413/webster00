@@ -396,6 +396,19 @@ input[name='q']::placeholder {
     text-align: center;
 }
 
+.contact-success{
+    max-width: 600px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form-button{
+    margin-left: 45%;
+    margin-right: auto;
+    margin-top: 0px;
+}
+
 .review{
     margin-top: 50px;
 }
