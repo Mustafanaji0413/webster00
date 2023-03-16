@@ -84,6 +84,13 @@ def add_to_wishlist(request, product_id):
     wishlist.products.add(product)
     return redirect('wishlist')
 
+@login_required
+def remove_from_wishlist(request, product_id):
+    product = get_object_or_404(Product, pk=product_id)
+    wishlist = Wishlist.objects.get(user=request.user)
+    wishlist.products.remove(product)
+    return HttpResponseRedirect(reverse('wishlist'))
+
 
 @login_required
 def submit_review(request, product_id):

@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>My Wishlist</h1>
+        <div class="row">
+            {% if wishlist.products.all %}
+                {% for product in wishlist.products.all %}
+                    <div class="col-md-4">
+                        <div class="card mb-4 shadow-sm">
+                            <div class="card-body">
+                                <h2 class="card-title">{{ product.name }}</h2>
+                                <p class="card-text">{{ product.description }}</p>
+                                <p class="card-text">$ {{ product.price }}</p>
+                                <form action="{% url 'remove_from_wishlist' product.id %}" method="POST">
+                                    {% csrf_token %}
+                                    <button class="btn btn-danger" type="submit">Remove from Wishlist</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>Your wishlist is empty.</p>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
