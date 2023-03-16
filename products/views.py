@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 from django.http import HttpResponseRedirect
 
-from .models import Product, Category, ReviewRating
+from .models import Product, Category, ReviewRating, Wishlist
 from .forms import ProductForm, ReviewForm
 
 # Create your views here.
@@ -75,6 +75,14 @@ def product_detail(request, product_id):
     }
 
     return render(request, 'products/product_detail.html', context)
+
+
+@login_required
+def add_to_wishlist(request, product_id):
+    product = Product.objects.get(id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user)
+    wishlist.products.add(product)
+    return redirect('wishlist')
 
 
 @login_required

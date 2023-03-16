@@ -46,3 +46,8 @@ class ReviewRating(models.Model):
 
     def __str__(self):
         return self.subject
+
+
+class Wishlist(models.Model):
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    products = models.ManyToManyField(Product, blank=True)
