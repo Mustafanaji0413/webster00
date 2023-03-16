@@ -108,11 +108,11 @@
                <small class="title text-muted">Welcome {{ user }}!</small>
                <div>
                  {% if request.user.is_superuser %}
-
+                 <a href="{% url 'add_product' %}"> Admin </a>
                  {% endif %}
                  <a href="{% url 'profile' %}">My Profile</a> <span class="dark-transp"> | </span>
                  <a href="{% url 'account_logout' %}"> Logout </a> <span class="dark-transp"> | </span>
-                 <a href="{% url 'add_product' %}"> Admin </a>
+                 <a href="{% url 'wishlist' %}"> Wishlist </a>
                </div>
              </div>
              {% else %}
