@@ -370,7 +370,12 @@ input[name='q']::placeholder {
 }
 
 .social-2{
-    padding-left: 12%;
+    padding-left: 3%;
+}
+
+.social-3{
+    margin-left: 0%;
+    margin-bottom: 20%;
 }
 
 .social-10{
@@ -409,6 +414,8 @@ input[name='q']::placeholder {
     margin-top: 0px;
 }
 
+/* Review*/
+
 .review{
     margin-top: 50px;
 }
@@ -418,6 +425,7 @@ input[name='q']::placeholder {
     background: #00000082;
     font: 14px Helvetica, Arial, sans-serif;
     width: 600px;
+    margin-left: 60%;
   }
 
 
