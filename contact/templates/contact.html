@@ -2,10 +2,12 @@
 
 {% block content %}
 <div class="overlay"></div>
-  <h1>Contact Us</h1>
+<div class="contact_form">
+  <h1 class="contact_header">Contact Us</h1>
   <form method="post" class="contact-form">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit" class="btn btn-primary">Send</button>
   </form>
+</div>
 {% endblock %}

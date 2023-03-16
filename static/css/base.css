@@ -381,7 +381,20 @@ input[name='q']::placeholder {
     margin-left: 40%;
 }
 
-/* Review form */
+/* Contact form */
+
+.contact-form {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+.contact_form{
+    margin-top: 100px;
+}
+
+.contact_header{
+    text-align: center;
+}
 
 .review{
     margin-top: 50px;
