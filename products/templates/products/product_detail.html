@@ -31,15 +31,16 @@
         <!-- Product name/price and rating -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
+                <form action="{% url 'add_to_wishlist' product.id %}" method="POST">
+                    {% csrf_token %}
+                    <button type="submit">Add to Wishlist</button>
+                </form>
                 <form action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="content-body">
 
                         <h2 class="title">{{ product.name }}</h2>
-                        <form action="{% url 'add_to_wishlist' product.id %}" method="POST">
-                            {% csrf_token %}
-                            <button type="submit">Add to Wishlist</button>
-                        </form>
+                        
                         <div class="rating-star">
                             <span>{{product.rating}} reviews<i class="fa fa-star" aria-hidden="true"></i></span>
                         </div>

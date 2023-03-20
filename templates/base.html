@@ -107,16 +107,17 @@
              <div class="widget-header">
                <small class="title text-muted">Welcome {{ user }}!</small>
                <div>
-                 {% if request.user.is_superuser %}
-                 <a href="{% url 'add_product' %}"> Admin </a>
-                 {% endif %}
                  <a href="{% url 'profile' %}">My Profile</a> <span class="dark-transp"> | </span>
+                 <a href="{% url 'wishlist' %}">Wishlist</a> <span class="dark-transp"> | </span>
+                 {% if request.user.is_superuser %}
+                 <a href="{% url 'add_product' %}"> Admin </a> <span class="dark-transp"> | </span>
+                 {% endif %}
                  <a href="{% url 'account_logout' %}"> Logout </a> <span class="dark-transp"> | </span>
                </div>
              </div>
              {% else %}
              <div class="widget-header">
-               <small class="title text-muted">Welcome guest!</small>
+               <small class="title text-muted">Welcome Guest!</small>
                <div>
                  <a href="{% url 'account_login' %}">Login</a> <span class="dark-transp"> | </span>
                  <a href="{% url 'account_signup' %}"> Register</a>

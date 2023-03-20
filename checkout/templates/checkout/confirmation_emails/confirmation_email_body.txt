@@ -1,4 +1,4 @@
-Hello {{ order.full_name }}!
+Hey {{ order.full_name }}!
 
 This is a confirmation of your order at Webster. Your order information is below:
 
