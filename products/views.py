@@ -79,13 +79,15 @@ def product_detail(request, product_id):
 
 @login_required
 def wishlist(request):
-    wishlist, created = Wishlist.objects.get_or_create(user=request.user.userprofile)
-    return render(request, 'products/wishlist.html')
+    wishlist = Wishlist.objects.get(user=request.user.userprofile)
+    return render(request, 'products/wishlist.html', {'wishlist': wishlist})
 
 
 @login_required
 def add_to_wishlist(request, product_id):
     product = Product.objects.get(id=product_id)
+    wishlist, created = Wishlist.objects.get_or_create(user=request.user.userprofile)
+    wishlist.products.add(product)
     return redirect('wishlist')
 
 
@@ -94,7 +96,7 @@ def remove_from_wishlist(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     wishlist = Wishlist.objects.get(user=request.user.userprofile)
     wishlist.products.remove(product)
-    return HttpResponseRedirect(reverse('add_to_wishlist'))
+    return redirect('wishlist')
 
 
 @login_required
