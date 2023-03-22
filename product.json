@@ -1,1 +1,0 @@
-[{"model": "products.category", "pk": 1, "fields": {"name": "dumbell", "friendly_name": "Dumbells"}}, {"model": "products.category", "pk": 2, "fields": {"name": "kettlebell", "friendly_name": "Kettlebell"}}
