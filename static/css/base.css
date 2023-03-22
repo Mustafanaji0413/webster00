@@ -77,6 +77,10 @@ body {
     font-family: 'Lato';
 }
 
+.overlay-1-2{
+    margin-bottom: 0%;
+}
+
 /* from Bulma */
 .icon {
     align-items: center;
