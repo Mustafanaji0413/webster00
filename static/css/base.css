@@ -88,7 +88,8 @@ body {
 
 .logo-font {
     text-transform: uppercase;
-    color: black;
+    color: #007bff;
+    text-align: center;
 }
 
 .head-1{
