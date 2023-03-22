@@ -373,17 +373,18 @@ input[name='q']::placeholder {
     padding-left: 3%;
 }
 
-.social-3{
-    margin-left: 0%;
-    margin-bottom: 20%;
-}
 
 .social-10{
     margin-top: 10px;
 }
 
+
 .edit-remove{
     margin-left: 40%;
+}
+
+.signup-form-3{
+    padding-right: 10%;
 }
 
 /* Contact form */
@@ -424,8 +425,6 @@ input[name='q']::placeholder {
 #mc_embed_signup {
     background: #00000082;
     font: 14px Helvetica, Arial, sans-serif;
-    width: 600px;
-    margin-left: 60%;
   }
 
 
