@@ -120,7 +120,7 @@ def submit_review(request, product_id):
             return redirect('home')
     else:
         form = ReviewForm(request.POST, request.FILES, instance=review)
-    return render(request, 'name-of-some-template.html', {'form': form})
+    return render(request, 'products.html', {'form': form})
 
 @login_required
 def add_product(request):
