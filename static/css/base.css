@@ -367,6 +367,13 @@ input[name='q']::placeholder {
     margin-top: 10px;
 }
 
+.overlay-2{
+    height: 60%;
+	width: 100%;
+    margin-top: 231px;
+	background: rgb(255, 255, 255);
+}
+
 .overlay-1 {
     height: 60%;
 	width: 100%;
@@ -441,9 +448,13 @@ input[name='q']::placeholder {
 
 
 /* adjust header position to avoid overlap with navbar */
-@media (max-width: 767.98px) {
+@media (max-width: 768px) {
     .header-container {
         margin-top: 70px;
+    }
+
+    .head-1{
+        width: 400px;
     }
 }
 
@@ -457,6 +468,8 @@ input[name='q']::placeholder {
         left: 0;
         z-index: 1030;
     }
+
+    
 
     .header-container {
         padding-top: 80px;
@@ -479,6 +492,10 @@ input[name='q']::placeholder {
 
     .nav-link {
         padding: 0.15rem;
+    }
+
+    .head-1{
+        width: 400px;
     }
 
     .nav-link i.fa-lg {
@@ -508,5 +525,7 @@ input[name='q']::placeholder {
     .increment-qty, .decrement-qty {
         padding: .25rem .5rem !important;
     }
+    
+
 }
 
