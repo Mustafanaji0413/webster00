@@ -435,6 +435,14 @@ input[name='q']::placeholder {
 }
 
 
+/* adjust header position to avoid overlap with navbar */
+@media (max-width: 767.98px) {
+    .header-container {
+        margin-top: 70px;
+    }
+}
+
+
 /* fixed top navbar only on medium and up */
 @media (min-width: 992px){
     .fixed-top-desktop-only {
