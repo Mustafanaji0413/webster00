@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
+from django.urls import reverse
 from django.db.models.functions import Lower
 from django.http import HttpResponseRedirect
 
@@ -117,7 +118,7 @@ def submit_review(request, product_id):
             messages.success(
                 request, f'Thank you! Your review has been {action}.'
             )
-            return redirect('home')
+            return redirect(reverse('product_detail', args=[product_id]))
     else:
         form = ReviewForm(request.POST, request.FILES, instance=review)
     return render(request, 'products.html', {'form': form})
