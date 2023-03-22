@@ -1,0 +1,1 @@
+web: gunicorn webster00.wsgi:application
