@@ -80,7 +80,7 @@ def product_detail(request, product_id):
 
 @login_required
 def wishlist(request):
-    wishlist = Wishlist.objects.get(user=request.user.userprofile)
+    wishlist = Wishlist.objects.get_or_create(user=request.user.userprofile)
     return render(request, 'products/wishlist.html', {'wishlist': wishlist})
 
 

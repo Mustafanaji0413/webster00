@@ -51,4 +51,3 @@ class ReviewRating(models.Model):
 class Wishlist(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     products = models.ManyToManyField(Product, blank=True, related_name='wishlists')
-
