@@ -36,9 +36,9 @@
      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
    </script>
    <script src="https://js.stripe.com/v3/"></script>
-   <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
+   <script src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'>
    </script>
-   <script type='text/javascript'>
+   <script>
      (function ($) {
        window.fnames = new Array();
        window.ftypes = new Array();
@@ -67,11 +67,11 @@
 
  <body>
    <header id="topnav" class="container-fluid fixed-top">
-     <section class="header-main border-bottom bg-white pt-lg-2 d-lg flex">
+     <div class="header-main border-bottom bg-white pt-lg-2 d-lg flex">
        <div class="row align-items-center">
          <div class="col-lg-2 col-md-3 col-6">
            <a href="{% url 'home' %}" class="brand-wrap">
-             <img class="logo" src="media/logo.png">
+             <img class="logo" src="media/logo.png" alt="Image of the blue logo Webster">
            </a> <!-- brand-wrap.// -->
          </div>
          <div class="col-lg col-sm col-md col-6 flex-grow-0">
@@ -139,7 +139,7 @@
          </div>
        </div>
        </div>
-     </section>
+      </div>
    </header>
 
    {% if messages %}
@@ -166,7 +166,7 @@
    {% endblock %}
 
    {% block postloadjs %}
-   <script type="text/javascript">
+   <script>
      $('.toast').toast('show');
    </script>
    {% endblock %}
