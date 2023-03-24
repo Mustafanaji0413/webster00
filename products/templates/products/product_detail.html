@@ -35,8 +35,8 @@
                 <form action="{% url 'add_to_wishlist' product.id %}" method="POST">
                     {% csrf_token %}
                     <button class="btn btn-primary add-to-wishlist-btn">
-                        <a type="submit"> Add to Wishlist <i class="fa fa-heart" aria-hidden="true"></i>
-                        </a>
+                        <form type="submit"> Add to Wishlist <i class="fa fa-heart" aria-hidden="true"></i>
+                        </form>
                     </button>
                 </form>
                 <form action="{% url 'add_to_bag' product.id %}" method="POST">
@@ -114,25 +114,25 @@
                     <label>Rate this product:</label>
                     <br>
                     <div class="rate">
-                        <input type="radio" name="rating" id="rating10" value="5" required /><label for="rating10"
+                        <input type="radio" name="rating" id="rating10" value="5" required><label for="rating10"
                             title="5"></label>
-                        <input type="radio" name="rating" id="rating9" value="4.5" required /><label for="rating9"
+                        <input type="radio" name="rating" id="rating9" value="4.5" required><label for="rating9"
                             title="4.5" class="half"></label>
-                        <input type="radio" name="rating" id="rating8" value="4" required /><label for="rating8"
+                        <input type="radio" name="rating" id="rating8" value="4" required><label for="rating8"
                             title="4"></label>
-                        <input type="radio" name="rating" id="rating7" value="3.5" required /><label for="rating7"
+                        <input type="radio" name="rating" id="rating7" value="3.5" required><label for="rating7"
                             title="3.5" class="half"></label>
-                        <input type="radio" name="rating" id="rating6" value="3" required /><label for="rating6"
+                        <input type="radio" name="rating" id="rating6" value="3" required><label for="rating6"
                             title="3"></label>
-                        <input type="radio" name="rating" id="rating5" value="2.5" required /><label for="rating5"
+                        <input type="radio" name="rating" id="rating5" value="2.5" required><label for="rating5"
                             title="2.5" class="half"></label>
-                        <input type="radio" name="rating" id="rating4" value="2" required /><label for="rating4"
+                        <input type="radio" name="rating" id="rating4" value="2" required><label for="rating4"
                             title="2"></label>
-                        <input type="radio" name="rating" id="rating3" value="1.5" required /><label for="rating3"
+                        <input type="radio" name="rating" id="rating3" value="1.5" required><label for="rating3"
                             title="1.5" class="half"></label>
-                        <input type="radio" name="rating" id="rating2" value="1" required /><label for="rating2"
+                        <input type="radio" name="rating" id="rating2" value="1" required><label for="rating2"
                             title="1"></label>
-                        <input type="radio" name="rating" id="rating1" value="0.5" required /><label for="rating1"
+                        <input type="radio" name="rating" id="rating1" value="0.5" required><label for="rating1"
                             title="0.5" class="half"></label>
                     </div>
                     <br>
@@ -147,9 +147,9 @@
             </form>
             <br>
             <header class="section-heading">
-                <span>
+                <div>
                     <h3>Customer Reviews</h3>
-                </span>
+                </div>
                 <div class="rating-star">
                     <span>
                         <i class="fa fa-star{% if single_product.averageReview < 0.5 %}-o{% elif single_product.averageReview >= 0.5 and single_product.averageReview < 1 %}-half-o {% endif %}"
@@ -172,16 +172,16 @@
             <article class="box mb-3">
                 <div class="icontext w-100">
 
-                    
+
                 </div> <!-- icontext.// -->
                 <div class="mt-3">
                     <div class="card">
-                        
+
                         <div class="card-header">
                             <div class="text">
                                 <span class="date text-muted float-md-right">{{review.updated_at}} </span>
                                 <h6 class="mb-1">{{review.user.full_name}} </h6>
-        
+
                             </div>
                             <div class="rating-star">
                                 <span>
@@ -198,7 +198,6 @@
                                 </span>
                             </div>
                             <h6>{{review.subject}}</h6>
-                            
                         </div>
                         <div class="card-body">
                             <p>
@@ -210,8 +209,8 @@
             </article>
             {% endfor %}
         </div>
-    </div> <!-- col.// -->
-</div> <!-- row.// -->
+    </div> 
+</div> 
 {% endblock %}
 
 {% block postloadjs %}
