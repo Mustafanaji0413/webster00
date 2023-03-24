@@ -65,43 +65,47 @@
                 {% for product in products %}
                 <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
                     <div class="card h-100 border-0">
-                        {% if product.image %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ product.image.url }}" alt="{{ product.name }}">
-                        </a>
-                        {% else %}
-                        <a href="{% url 'product_detail' product.id %}">
-                            <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
-                                alt="{{ product.name }}">
-                        </a>
-                        {% endif %}
-                        <!-- Product name and price -->
-                        <figcaption class="info-wrap">
-                            <div class="fix-height">
-                                <a href="{% url 'product_detail' product.id %}" class="title">{{ product.name }}</a>
-                                <div class="price-wrap mt-2">
-                                    <span class="price">$ {{ product.price }}</span>
+                        <figure>
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ product.image.url }}"
+                                    alt="{{ product.name }}">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ product.name }}">
+                            </a>
+                            {% endif %}
+                            <!-- Product name and price -->
+                            <figcaption class="info-wrap">
+                                <div class="fix-height">
+                                    <a href="{% url 'product_detail' product.id %}" class="title">{{ product.name }}</a>
+                                    <div class="price-wrap mt-2">
+                                        <span class="price">$ {{ product.price }}</span>
+                                    </div>
+                                    <!-- Product ratings -->
+                                    {% if product.rating %}
+                                    <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
+                                        5</small>
+                                    {% else %}
+                                    <small class="text-muted">No Rating</small>
+                                    {% endif %}
+                                    <!-- Edit and Delete Product  -->
+                                    {% if request.user.is_superuser %}
+                                    <small class="ml-3">
+                                        <a href="{% url 'edit_product' product.id %}">Edit</a> |
+                                        <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+                                    </small>
+                                    {% endif %}
+                                    <!-- View product details -->
                                 </div>
-                                <!-- Product ratings -->
-                                {% if product.rating %}
-                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} /
-                                    5</small>
-                                {% else %}
-                                <small class="text-muted">No Rating</small>
-                                {% endif %}
-                                <!-- Edit and Delete Product  -->
-                                {% if request.user.is_superuser %}
-                                <small class="ml-3">
-                                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                </small>
-                                {% endif %}
-                                <!-- View product details -->
-                            </div>
-                            <a href="{% url 'product_detail' product.id %}" class="btn btn-block btn-primary">View
-                                Details </a>
-                        </figcaption>
+                                <a href="{% url 'product_detail' product.id %}" class="btn btn-block btn-primary">View
+                                    Details </a>
+                            </figcaption>
+                        </figure>
                     </div>
+
                 </div>
                 {% if forloop.counter|divisibleby:1 %}
                 <div class="col-12 d-sm-none mb-5">
@@ -217,13 +221,13 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type="text/javascript">
+<script>
     $('.btt-link').click(function (e) {
         window.scrollTo(0, 0)
     })
 </script>
 
-<script type="text/javascript">
+<script>
     $('#sort-selector').change(function () {
         var selector = $(this);
         var currentUrl = new URL(window.location);
