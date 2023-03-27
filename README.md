@@ -68,3 +68,31 @@ The planning of the project is broken into 5 planes,
 My user stories were obtained by doing research into other stores and seeing how their sites ran. Harry my mentor in particular helped me to gauge what I would need to implement and what potentially could be left out or moved into a phase for later deployment.
 
 
+## The Scope Plane
+
+The features that I had thought about before designing the project and my deadline was not achievable. I opted for a phased release approach.
+
+I was able to ascertain which features were more important and should be working on my initial deployment, and which features I could add later.
+
+My plan for a phased deployment,
+
+<strong>Phase 1</strong>
+
+A project that would satisfy my user stories.
+Home Page with an introduction
+Navbar allowing the user to navigate to different pages
+Products page allowing users to view all products.
+A product detail page.
+E-commerce functionality allowing the user to make purchases.
+
+<strong>Phase 2</strong>
+
+Building upon the Phase 1 project with additional features.
+A functional blog app that allows admins to post blogs.
+Allow users the filter blog types.
+Allow users to post comments on the blogs.
+
+<strong>Phase 3</strong>
+
+My final planned phase would focus on user feedback
+Review feedback gathered to understand what can be improved.
