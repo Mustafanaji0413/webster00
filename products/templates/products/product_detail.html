@@ -32,12 +32,14 @@
         <!-- Product name/price and rating -->
         <div class="col-12 col-md-6 col-lg-4">
             <div class="product-details-container mb-5 mt-md-5">
+                {% if user.is_authenticated %}
                 <form action="{% url 'add_to_wishlist' product.id %}" method="POST">
                     {% csrf_token %}
                     <button class="btn btn-primary add-to-wishlist-btn" type="submit">
                         Add to Wishlist <i class="fa fa-heart" aria-hidden="true"></i>
                     </button>
                 </form>
+                {% endif %}
                 <form action="{% url 'add_to_bag' product.id %}" method="POST">
                     {% csrf_token %}
                     <div class="content-body">
