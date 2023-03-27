@@ -123,3 +123,74 @@ WishList
 
 - The wishlist model allows users to save items for quicker access. These items can be removed.
 This model also acts as a container for the WishListItem model. Just like the Order model, each wishlist is unique to each user but connecting to the user ID.
+
+
+# The Surface Plane
+
+## Features
+
+### Navigation Bar
+
+- Navbar is implemented on every page and is fully responsive across all resolutions.
+- Users can navigate across the site freely.
+- Users shopping have the cost of the current shopping basket displayed.
+
+<img>
+
+### Home page
+
+- Home page features a short text that encourages them to start shopping, and a button to the products page.
+
+<img>
+
+### Products Page
+- Store page offer products on large resolutions in a row of four. Images are large to attract the user's attention, and clicking the image will redirect the user to the product detail page.
+
+<img>
+
+### Search Functionality
+
+- Users can take advantage of the search function within the navigation bar to search for products or descriptions.
+- Search results are shown in a simple format with a link to redirect to the general store page.
+
+<img>
+
+### Reviews
+
+- Users can choose to view the reviews left by users for a specific product.
+- Logged-in users can post a review, whereas users not logged in are shown a small message to log in to leave a product review.
+- User choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
+
+<img>
+
+### Toasts
+
+- Almost all actions provide feedback to the user via the bootstrap toasts written to provide user feedback.
+- Users shopping can view the current items within the bag and total cost.
+- At the bottom of the toast is a link to the checkout page.
+
+<img>
+
+### Shopping Bag
+
+- The shopping bag page is fully responsive, showing users a picture of the item, name, price per unit, and total price.
+- Users can also choose to increase/decrease the number of items in their bag, click the update button to have the prices update.
+- Users can click the remove link and have all the items within the bag removed, regardless of quantity.
+- At the bottom of the page user can find the cost of the bag, cost of delivery, the total and how much they must spend to be eligible for free delivery.
+
+<img>
+
+### Checkout Overlay
+
+- Users who checkout will see a simple overlay with a spinning icon while the payment is processed.
+
+<img>
+
+### Social Media Links
+
+- Almost every page throughout the project has a footer with social media links.
+- Clicking the social media like redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
+
+<img>
+
+### Wishlist 
