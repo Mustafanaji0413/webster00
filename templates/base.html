@@ -101,6 +101,7 @@
                  <a href="{% url 'wishlist' %}">Wishlist</a> <span class="dark-transp"> | </span>
                  {% if request.user.is_superuser %}
                  <a href="{% url 'add_product' %}"> Admin </a> <span class="dark-transp"> | </span>
+                 <a href="{% url 'contact_admin' %}"> Messages </a> <span class="dark-transp"> | </span>
                  {% endif %}
                  <a href="{% url 'account_logout' %}"> Logout </a> <span class="dark-transp"> | </span>
                </div>
