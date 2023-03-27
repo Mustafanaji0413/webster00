@@ -2,13 +2,12 @@
 
 <h3><a href="https://webster00.herokuapp.com/">Live Site </a></h3>
 
-<img> Image
+<img href="">
 
 
 
-## Introduction
+<strong> <h2> Introduction </h2></strong>
 
-<p>
 Welcome to Lifty.
 
 Lifty is my fourth and final project, part of the Code Institute, Full Stack Web Developer Course.
@@ -19,10 +18,12 @@ Lifty is a fictional brand, purchases on this project are accepted via Stripes t
 
 <a href="https://stripe.com/docs/testing">Stripe Test Integration</a>
 
-This project is for educational purposes only, No commercial revenue is generated from this project.
-</p>
+This project is for educational purposes only, No commercial revenue is generated from this project.  
 
-## UXD - User Experience Design
+-----------------------------------------------------------
+
+
+<strong> <h2> UXD - User Experience Design </h2></strong>
 
 <p>
 A large part of the inspiration behind the planning for this project came from Code Institutes teaching course.
@@ -38,25 +39,40 @@ The planning of the project is broken into 5 planes,
 - The Surface Plane
 </p>
 
-## The Strategy Plane
+-----------------------------------------------------------
+
+<strong> <h2> The Strategy Plane</h2></strong>
+<br>
+
 ### Creator Goals
 - As a creator, I want the site to be easy to navigate.
 - As a creator, I want to allow users to filter through products.
 - As a creator, I want to provide users with updates to any actions.
 - As a creator, I want to allows admins to Add/Edit/Delete products to/from the store.
-### User Stories
+
+<br>
+
+## User Stories
+
 #### Regular Site User Stories
 - As a site user, I want the main purpose of the site to be clear so that I can determine if this is the correct site for me.
 - As a site user, I want to be able to navigate across the site, so that I can view different pages on the site.
 - As a site user, I want to be able to sign up, so that I can have a personal account on the site.
 - As a site user, I want to be able to receive an email confirmation after registering, so that I can verify that my account registration was successful.
-#### Customer Shopper Stories
+
+<br>
+
+<strong><h3>Customer Shopper Stories</h3></strong>
+
+
+
 - As a shopper, I want to be to view all products, so that I can decide what I want to buy.
 - As a shopper, I want to be able to view products in more detail.
 - As a shopper, I want to be able to view reviews left by other customers for products, so that I can understand whether the product is worth purchasing.
 - As a shopper, I want to be able to see a confirmation when a product is added to my shopping bag, so that I can avoid accidentally adding multiple quantities of the same item.
 - As a shopper, I want to be able to view my bag, so that I can see what is in my bag and adjust quantities
-#### Customers (Logged in) Stories
+
+<strong><h3>Customers (Logged in) Stories</h3></strong>
 - As a logged-in user, I want to be able to save my details, so that I can avoid retyping my details again.
 - As a logged-in user, I want to have my past orders viewable, so that I can verify what my past order was and view the order number.
 - As a logged-in user, I want to be able to leave reviews on a product, so that other users may be able to benefit from my opinions on my purchase.
@@ -67,8 +83,9 @@ The planning of the project is broken into 5 planes,
 
 My user stories were obtained by doing research into other stores and seeing how their sites ran. Harry my mentor in particular helped me to gauge what I would need to implement and what potentially could be left out or moved into a phase for later deployment.
 
+-----------------------------------------------------------
 
-## The Scope Plane
+<strong> <h2> The Scope Plane </h2></strong>
 
 The features that I had thought about before designing the project and my deadline was not achievable. I opted for a phased release approach.
 
@@ -76,7 +93,7 @@ I was able to ascertain which features were more important and should be working
 
 My plan for a phased deployment,
 
-<strong>Phase 1</strong>
+<strong><h3>Phase 1</strong></h3>
 
 A project that would satisfy my user stories.
 Home Page with an introduction
@@ -85,21 +102,25 @@ Products page allowing users to view all products.
 A product detail page.
 E-commerce functionality allowing the user to make purchases.
 
-<strong>Phase 2</strong>
+<strong><h3>Phase 2</strong></h3>
 
 Building upon the Phase 1 project with additional features.
 A functional blog app that allows admins to post blogs.
 Allow users the filter blog types.
 Allow users to post comments on the blogs.
 
-<strong>Phase 3</strong>
+<strong><h3>Phase 3</strong></h3>
 
 My final planned phase would focus on user feedback
 Review feedback gathered to understand what can be improved.
 
-## The Structure Plane
+-----------------------------------------------------------
 
-##### Key Models
+<strong> <h2> The Structure Plane </h2></strong>
+
+<strong>Key Models</strong>
+
+<br>
 
 <strong>UserProfile</strong>
 
@@ -121,11 +142,13 @@ Review feedback gathered to understand what can be improved.
 - The review model also is connected to the User model to obtain the user's username. This allows the user to see the name of the user on each review.
 WishList
 
+<strong>WishList</strong>
+
 - The wishlist model allows users to save items for quicker access. These items can be removed.
-This model also acts as a container for the WishListItem model. Just like the Order model, each wishlist is unique to each user but connecting to the user ID.
+- This model also acts as a container for the WishListItem model. Just like the Order model, each wishlist is unique to each user but connecting to the user ID.
 
 
-# The Surface Plane
+<strong> <h2> The Surface Plane </h2></strong>
 
 ## Features
 
@@ -135,25 +158,25 @@ This model also acts as a container for the WishListItem model. Just like the Or
 - Users can navigate across the site freely.
 - Users shopping have the cost of the current shopping basket displayed.
 
-<img>
+<img href="">
 
 ### Home page
 
 - Home page features a short text that encourages them to start shopping, and a button to the products page.
 
-<img>
+<img href="">
 
 ### Products Page
 - Store page offer products on large resolutions in a row of four. Images are large to attract the user's attention, and clicking the image will redirect the user to the product detail page.
 
-<img>
+<img href="">
 
 ### Search Functionality
 
 - Users can take advantage of the search function within the navigation bar to search for products or descriptions.
 - Search results are shown in a simple format with a link to redirect to the general store page.
 
-<img>
+<img href="">
 
 ### Reviews
 
@@ -161,7 +184,7 @@ This model also acts as a container for the WishListItem model. Just like the Or
 - Logged-in users can post a review, whereas users not logged in are shown a small message to log in to leave a product review.
 - User choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
 
-<img>
+<img href="">
 
 ### Toasts
 
@@ -169,7 +192,7 @@ This model also acts as a container for the WishListItem model. Just like the Or
 - Users shopping can view the current items within the bag and total cost.
 - At the bottom of the toast is a link to the checkout page.
 
-<img>
+<img href="">
 
 ### Shopping Bag
 
@@ -178,19 +201,48 @@ This model also acts as a container for the WishListItem model. Just like the Or
 - Users can click the remove link and have all the items within the bag removed, regardless of quantity.
 - At the bottom of the page user can find the cost of the bag, cost of delivery, the total and how much they must spend to be eligible for free delivery.
 
-<img>
+<img href="">
 
 ### Checkout Overlay
 
 - Users who checkout will see a simple overlay with a spinning icon while the payment is processed.
 
-<img>
+<img href="">
 
 ### Social Media Links
 
 - Almost every page throughout the project has a footer with social media links.
 - Clicking the social media like redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
+- The footer also contains a link to a contact form so that the user can reach out to us.
+- On the footer there is also a Mail Chimp newsletter subscription field, that lets the user enter their email to subscribe to our weekly newsletter. 
+
+<img href="">
+
+### Wishlist 
+
+- The user has the option to add a product to Add a product to their wishlist.
+- On the wishlist page the user can see what products they have added to it, along with removing items from the wishlist.
+- If the wishlist is empty the page displays a block of text letting the user know that the wishlist is empty.
 
 <img>
 
-### Wishlist 
+### My profile
+
+- The user can navigate to 'My Profile' page through the navigation bar where they can see their default delivery information.
+- The 'My Profile' page also shows the privous orders the user has purchased along with the order number od that order. 
+
+
+### Contact Form
+
+- On the contact form the user has the option to write us a message by entering some rwquired fields and sending it to us.
+- After submitting a message the user is redriceted to a successs and sees a message on the screen that we have reccived the message.
+- The Contact page also includes a button that takes the user back to the home page for a better user experiance.
+
+<img>
+
+### Admin Page
+
+- If the user is a superuser, he/she has the option to view the Admin page.
+- On the Admin page the user add products to the store.
+
+<img>
