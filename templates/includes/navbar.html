@@ -1,3 +1,7 @@
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
 <nav class="navbar navbar-expand-md navbar-light bg-light">
   <a class="navbar-brand" href="{% url 'home' %}">Webster</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
@@ -5,15 +9,15 @@
   </button>
 
   <div class="collapse navbar-collapse" id="main-nav">
-    <ul class="navbar-nav w-auto mx-auto">
+    <ul class="navbar-nav justify-content-center">
         <li class="nav-item d-block d-md-none">
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'home' %}" id="home-link">
                 Home
             </a>
         </li>
         <!-- Navbar sort products -->
-        <div class="col-lg col-sm col-md col-6 flex-grow-0">
-            <div class="category-wrap dropdown d-inline-block float-right">
+        <div class="col-* flex-grow-0">
+            <div class="category-wrap dropdown d-inline-block ml-auto">
               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 <i class="fa fa-bars"></i> All Categories
               </button>
