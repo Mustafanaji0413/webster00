@@ -42,6 +42,5 @@ def contact(request):
     return render(request, 'contact.html', {'form': form})
 
 
-
 def contact_success(request):
     return render(request, 'contact_success.html')
