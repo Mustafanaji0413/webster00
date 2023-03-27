@@ -76,21 +76,9 @@
              <img class="logo" src="{{ MEDIA_URL }}logo.png" alt="Image of the blue logo Webster">
            </a> <!-- brand-wrap.// -->
          </div>
-         <div class="col-lg col-sm col-md col-6 flex-grow-0">
-           <div class="category-wrap dropdown d-inline-block float-right">
-             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-               <i class="fa fa-bars"></i> All Categories
-             </button>
-             <div class="dropdown-menu">
-               <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-               <a href="{% url 'products' %}?sort=price&direction=asce" class="dropdown-item">By Price</a>
-               <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item">By Rating</a>
-               <a href="{% url 'products' %}?sort=wheight&direction=asc" class="dropdown-item">By Wheight</a>
-             </div>
-           </div> <!-- category-wrap.// -->
-         </div> <!-- col.// -->
+         
          <a href="{% url 'products' %}" class="btn btn-outline-primary">Store</a>
-         <div class="col-lg  col-md-6 col-sm-12 col">
+         <div class="col-lg col-md-6 col-sm-12 col">
            <form action="{% url 'products' %}" class="search" method='GET'>
              <div class="input-group w-100">
                <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="q" required>
@@ -103,7 +91,7 @@
              </div>
            </form> <!-- search-wrap .end// -->
          </div> <!-- col.// -->
-         <div class="col-lg-3 col-sm-6 col-8 order-2 order-lg-3">
+         <div class="col-lg-6 col-sm-6 col-8 order-2 order-lg-3">
            <div class="d-flex mb-3 mb-lg-0">
              {% if request.user.is_authenticated %}
              <div class="widget-header">
