@@ -77,7 +77,7 @@
            </a> <!-- brand-wrap.// -->
          </div>
          
-         <a href="{% url 'products' %}" class="btn btn-outline-primary">Store</a>
+         <a href="{% url 'products' %}" class="btn btn-outline-primary ml-5">Store</a>
          <div class="col-lg col-md-6 col-sm-12 col">
            <form action="{% url 'products' %}" class="search" method='GET'>
              <div class="input-group w-100">
@@ -92,41 +92,52 @@
            </form> <!-- search-wrap .end// -->
          </div> <!-- col.// -->
          <div class="col-lg-6 col-sm-6 col-8 order-2 order-lg-3">
-           <div class="d-flex mb-3 mb-lg-0">
-             {% if request.user.is_authenticated %}
-             <div class="widget-header">
-               <small class="title text-muted">Welcome {{ user }}!</small>
-               <div>
-                 <a href="{% url 'profile' %}">My Profile</a> <span class="dark-transp"> | </span>
-                 <a href="{% url 'wishlist' %}">Wishlist</a> <span class="dark-transp"> | </span>
-                 {% if request.user.is_superuser %}
-                 <a href="{% url 'add_product' %}"> Admin </a> <span class="dark-transp"> | </span>
-                 <a href="{% url 'contact_admin' %}"> Messages </a> <span class="dark-transp"> | </span>
-                 {% endif %}
-                 <a href="{% url 'account_logout' %}"> Logout </a> <span class="dark-transp"> | </span>
-               </div>
-             </div>
-             {% else %}
-             <div class="widget-header">
-               <small class="title text-muted">Welcome Guest!</small>
-               <div>
-                 <a href="{% url 'account_login' %}">Login</a> <span class="dark-transp"> | </span>
-                 <a href="{% url 'account_signup' %}"> Register</a>
-               </div>
-             </div>
-             {% endif %}
-             <a href="{% url 'view_bag' %}" class="widget-header pl-3 ml-3">
-               <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
-               <span class="badge badge-pill badge-danger notify">
-                 {% if grand_total %}
-                 ${{ grand_total|floatformat:2 }}
-                 {% else %}
-                 $0.00
-                 {% endif %}
-               </span>
-             </a>
-           </div>
-         </div>
+          <div class="d-flex mb-3 mb-lg-0 ml-3">
+            {% if request.user.is_authenticated %}
+            <div class="widget-header">
+              <small class="title text-muted">Welcome {{ user }}!</small>
+              <div>
+                <div class="dropdown d-inline-block">
+                  <a class="dropdown-toggle" href="#" role="button" id="profileDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Profile</a>
+                  <div class="dropdown-menu" aria-labelledby="profileDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'profile' %}">My Profile</a>
+                    <a class="dropdown-item" href="{% url 'wishlist' %}">Wishlist</a>
+                  </div>
+                </div>
+                {% if request.user.is_superuser %}
+                <div class="dropdown d-inline-block ml-3">
+                  <a class="dropdown-toggle" href="#" role="button" id="adminDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                  <div class="dropdown-menu" aria-labelledby="adminDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'add_product' %}">Add Product</a>
+                    <a class="dropdown-item" href="{% url 'contact_admin' %}">Messages</a>
+                  </div>
+                </div>
+                {% endif %}
+                <a href="{% url 'account_logout' %}" class="pl-3">Logout</a>
+              </div>
+            </div>
+            {% else %}
+            <div class="widget-header">
+              <small class="title text-muted">Welcome Guest!</small>
+              <div>
+                <a href="{% url 'account_login' %}">Login</a> <span class="dark-transp"> | </span>
+                <a href="{% url 'account_signup' %}"> Register</a>
+              </div>
+            </div>
+            {% endif %}
+            <a href="{% url 'view_bag' %}" class="widget-header pl-3 ml-3">
+              <div class="icon icon-sm rounded-circle border"><i class="fa fa-shopping-cart"></i></div>
+              <span class="badge badge-pill badge-danger notify">
+                {% if grand_total %}
+                ${{ grand_total|floatformat:2 }}
+                {% else %}
+                $0.00
+                {% endif %}
+              </span>
+            </a>
+          </div>
+        </div>
+        
        </div>
      </div>
    </header>
