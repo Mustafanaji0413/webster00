@@ -2,15 +2,15 @@
 
 <h3><a href="https://webster00.herokuapp.com/">Live Site </a></h3>
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 31 35" src="https://user-images.githubusercontent.com/115544231/228381785-761b72f2-8978-43e5-af57-ee935fd4349f.png">
 
 
 
 <strong> <h2> Introduction </h2></strong>
 
-Welcome to Lifty.
+Welcome to Webster.
 
-Lifty is my fourth and final project, part of the Code Institute, Full Stack Web Developer Course.
+Webster is my fourth and final project, part of the Code Institute, Full Stack Web Developer Course.
 
 The purpose of this project was a build a full-stack site based around a business logic used to control a centrally-owned dataset. The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Stripe handles online test payments and Heroku Postgres as a relational database.
 
@@ -158,25 +158,29 @@ WishList
 - Users can navigate across the site freely.
 - Users shopping have the cost of the current shopping basket displayed.
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 36 45" src="https://user-images.githubusercontent.com/115544231/228382156-7d49a31d-2afe-47a3-a860-e2e6c3821d00.png">
+
 
 ### Home page
 
 - Home page features a short text that encourages them to start shopping, and a button to the products page.
 
-<img href="">
+<img width="1439" alt="Screenshot 2023-03-29 at 00 37 33" src="https://user-images.githubusercontent.com/115544231/228382258-d9109290-f1c7-41d6-a38e-703ff537f666.png">
+
 
 ### Products Page
 - Store page offer products on large resolutions in a row of four. Images are large to attract the user's attention, and clicking the image will redirect the user to the product detail page.
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 38 26" src="https://user-images.githubusercontent.com/115544231/228382351-b269ec94-bfcc-430f-9a6f-93c7585cc8b8.png">
+
 
 ### Search Functionality
 
 - Users can take advantage of the search function within the navigation bar to search for products or descriptions.
 - Search results are shown in a simple format with a link to redirect to the general store page.
 
-<img href="">
+<img width="400" alt="Screenshot 2023-03-29 at 00 39 17" src="https://user-images.githubusercontent.com/115544231/228382483-3d0e5b07-d450-40d1-bdb0-0be7c532d817.png">
+
 
 ### Reviews
 
@@ -184,7 +188,8 @@ WishList
 - Logged-in users can post a review, whereas users not logged in are shown a small message to log in to leave a product review.
 - User choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 41 38" src="https://user-images.githubusercontent.com/115544231/228382897-d5ae4fd7-93e4-4e9d-811b-b7b785a695ef.png">
+
 
 ### Toasts
 
@@ -192,7 +197,8 @@ WishList
 - Users shopping can view the current items within the bag and total cost.
 - At the bottom of the toast is a link to the checkout page.
 
-<img href="">
+<img width="400" alt="Screenshot 2023-03-29 at 00 42 53" src="https://user-images.githubusercontent.com/115544231/228383245-74728365-cd30-497c-9e39-4344a7f5bc40.png">
+
 
 ### Shopping Bag
 
@@ -201,22 +207,25 @@ WishList
 - Users can click the remove link and have all the items within the bag removed, regardless of quantity.
 - At the bottom of the page user can find the cost of the bag, cost of delivery, the total and how much they must spend to be eligible for free delivery.
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 43 28" src="https://user-images.githubusercontent.com/115544231/228383325-b51f0703-69da-425a-aefb-c689ee36cdbf.png">
+
 
 ### Checkout Overlay
 
 - Users who checkout will see a simple overlay with a spinning icon while the payment is processed.
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 44 13" src="https://user-images.githubusercontent.com/115544231/228383458-2bf0ce82-25c3-45a9-867f-52515fc18b11.png">
 
-### Social Media Links
+
+### Footer
 
 - Almost every page throughout the project has a footer with social media links.
 - Clicking the social media like redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
 - The footer also contains a link to a contact form so that the user can reach out to us.
 - On the footer there is also a Mail Chimp newsletter subscription field, that lets the user enter their email to subscribe to our weekly newsletter. 
 
-<img href="">
+<img width="800" alt="Screenshot 2023-03-29 at 00 46 19" src="https://user-images.githubusercontent.com/115544231/228383710-f724d051-a391-4bac-a5dd-d245fd45771d.png">
+
 
 ### Wishlist 
 
@@ -231,6 +240,8 @@ WishList
 - The user can navigate to 'My Profile' page through the navigation bar where they can see their default delivery information.
 - The 'My Profile' page also shows the privous orders the user has purchased along with the order number od that order. 
 
+<img width="800" alt="Screenshot 2023-03-29 at 00 48 25" src="https://user-images.githubusercontent.com/115544231/228384003-413e08a9-a320-4eca-bac3-1f7c161ba5a7.png">
+
 
 ### Contact Form
 
@@ -238,11 +249,20 @@ WishList
 - After submitting a message the user is redriceted to a successs and sees a message on the screen that we have reccived the message.
 - The Contact page also includes a button that takes the user back to the home page for a better user experiance.
 
-<img>
+<img width="650" alt="Screenshot 2023-03-29 at 00 49 15" src="https://user-images.githubusercontent.com/115544231/228384114-c1a3182d-de37-4876-b0a5-23dc9191605e.png">
+
 
 ### Admin Page
 
 - If the user is a superuser, he/she has the option to view the Admin page.
 - On the Admin page the user add products to the store.
 
-<img>
+<img width="800" alt="Screenshot 2023-03-29 at 00 50 20" src="https://user-images.githubusercontent.com/115544231/228384248-b62ad541-40c3-4186-a8ed-dab98243fe53.png">
+
+
+
+### Checkout Success
+
+- After the user made a purchase, he/she is redirected to a checkout success page. The page shows the orders the user has made, along with the ordernumber and other usful information
+
+<img width="800" alt="Screenshot 2023-03-29 at 00 45 19" src="https://user-images.githubusercontent.com/115544231/228384452-72bd929a-6039-4da8-a908-e7a0378c7f57.png">
