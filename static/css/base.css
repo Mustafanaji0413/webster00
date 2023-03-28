@@ -418,6 +418,10 @@ input[name='q']::placeholder {
     text-align: center;
 }
 
+.navbar-navbar{
+    margin-right: 0px;
+}
+
 .contact-success{
     max-width: 600px;
     margin-top: 150px;

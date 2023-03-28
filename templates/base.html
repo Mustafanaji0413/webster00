@@ -71,7 +71,7 @@
    <header id="topnav" class="container-fluid fixed-top">
      <div class="header-main border-bottom bg-white pt-lg-2 d-lg flex">
        <div class="row align-items-center">
-         <div class="col-lg-2 col-md-3 col-6">
+         <div class="col-lg-2 col-md-3 col-6" style="margin-right: 35px;">
            <a href="{% url 'products' %}" class="brand-wrap">
              <img class="logo" src="{{ MEDIA_URL }}logo.png" alt="Image of the blue logo Webster">
            </a> <!-- brand-wrap.// -->
@@ -81,7 +81,7 @@
          <div class="col-lg col-md-6 col-sm-12 col">
            <form action="{% url 'products' %}" class="search" method='GET'>
              <div class="input-group w-100">
-               <input type="text" class="form-control" style="width:60%;" placeholder="Search" name="q" required>
+               <input type="text" class="form-control" style="width:60%; margin-left: 50px;" placeholder="Search" name="q" required>
 
                <div class="input-group-append">
                  <button class="btn btn-primary" type="submit">
@@ -91,7 +91,7 @@
              </div>
            </form> <!-- search-wrap .end// -->
          </div> <!-- col.// -->
-         <div class="col-lg-6 col-sm-6 col-8 order-2 order-lg-3">
+         <div class="col-lg-6 col-sm-6 col-8 navbar-navbar order-2 order-lg-3">
           <div class="d-flex mb-3 mb-lg-0 ml-3">
             {% if request.user.is_authenticated %}
             <div class="widget-header">
