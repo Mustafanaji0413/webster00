@@ -464,8 +464,13 @@ input[name='q']::placeholder {
         width: 400px;
     }
 
-
+    .submit-button {
+        font-size: 7px; /* set the font size to 16px on screens smaller than 768px */
+      }
     
+    .search-bar {
+        margin-left: 10px;
+    }
 }
 
 
