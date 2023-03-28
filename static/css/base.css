@@ -419,7 +419,7 @@ input[name='q']::placeholder {
 }
 
 .navbar-navbar{
-    margin-right: 0px;
+    padding-left: 7%;
 }
 
 .contact-success{
