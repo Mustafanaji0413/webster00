@@ -9,6 +9,7 @@ class OrderLineItemAdminInline(admin.TabularInline):
 
 # Admin info
 
+
 class OrderAdmin(admin.ModelAdmin):
     inlines = (OrderLineItemAdminInline,)
 

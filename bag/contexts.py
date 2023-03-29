@@ -14,7 +14,7 @@ def bag_contents(request):
     bag = request.session.get('bag', {})
 
     # Calculate total inc shipping etc
-  
+
     for item_id, item_data in bag.items():
         product = get_object_or_404(Product, pk=item_id)
         total += item_data * product.price

@@ -5,6 +5,7 @@ from .forms import ContactForm
 from django.contrib.auth.decorators import login_required
 from .models import Contact
 
+
 @login_required
 def contact_admin(request):
     if request.method == 'POST':
@@ -24,7 +25,7 @@ def contact_admin(request):
     else:
         messages = messages.filter(status='unread')
     return render(request, 'contact_admin.html', {'messages': messages, 'status_filter': status_filter})
-    
+
 
 def contact(request):
     if request.method == 'POST':
