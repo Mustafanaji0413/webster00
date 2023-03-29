@@ -14,7 +14,7 @@ Webster is my fourth and final project, part of the Code Institute, Full Stack W
 
 The purpose of this project was a build a full-stack site based around a business logic used to control a centrally-owned dataset. The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Stripe handles online test payments and Heroku Postgres as a relational database.
 
-Lifty is a fictional brand, purchases on this project are accepted via Stripes test card details. For further information on which card number you should use, please refer to Stripe's official documentation.
+Webster is a fictional brand, purchases on this project are accepted via Stripes test card details. For further information on which card number you should use, please refer to Stripe's official documentation.
 
 <a href="https://stripe.com/docs/testing">Stripe Test Integration</a>
 
@@ -350,7 +350,35 @@ I conducted SEO research to decide on the keywords and phrases that would be use
 
 -----------------------------------------------------------
 
-<strong> <h2> Ma </h2></strong>
+<strong> <h2> Testing </h2></strong>
+
+I have made use of automated testing to ensure the website's functionality meets the desired intent.
+
+<br>
+
+<strong> <h3> Code Validation </h3></strong>
+
+<br>
+
+All of my code has been validated using an online validator specific to the language, all code now passes with zero errors.
+
+- <a href="https://validator.w3.org/">W3C Markup Validation Services</a>
+- - Used to validate all HTML code written and used in this webpage.
+
+<img width="800" alt="Screenshot 2023-03-29 at 16 36 29" src="https://user-images.githubusercontent.com/115544231/228681261-ec9ea018-0901-4a7b-8882-68bca693b6c8.png">
+
+- <a href="https://jigsaw.w3.org/css-validator/#validate_by_input">W3C CSS Validation Services</a>
+- - Used to validate all CSS code written and used in this webpage.
+
+<img width="800" alt="Screenshot 2023-03-29 at 16 35 58" src="https://user-images.githubusercontent.com/115544231/228681498-c19e740e-c600-48a1-9e7d-305ff536b2b2.png">
+
+- <a href="http://ww1.pep8online.com/">Pep8</a>
+
+- - Used to test my Python code for any issues or errors.
+
+
+
+
 
 
 -----------------------------------------------------------

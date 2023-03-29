@@ -456,6 +456,7 @@ input[name='q']::placeholder {
 
 /* adjust header position to avoid overlap with navbar */
 @media (max-width: 768px) {
+
     .header-container {
         margin-top: 70px;
     }
@@ -473,8 +474,10 @@ input[name='q']::placeholder {
     }
 
     .contact-admin-2 {
-        margin-top: 20%;
+        margin-top: 25%;
     }
+
+    
 }
 
 @media (max-width: 375px) {
@@ -500,6 +503,7 @@ input[name='q']::placeholder {
         padding-top: 80px;
     }
 } 
+
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {
