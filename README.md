@@ -329,3 +329,174 @@ The Code Institiue student template was used to create this project.
 
 <a href="https://github.com/Code-Institute-Org/gitpod-full-template">Code Institute Full Template</a>
 
+- Click the Use This Template button.
+- Give your repository a name, and description if you wish.
+- Click the Create Repository from Template to create your repository.
+- Click the Gitpod button to create a gitpod workspace, this can take a few minutes.
+- When working on project using Gitpod, please open the workspace from Gitpod, this will open your previous workspace rather than creating a new one. Use the following commands to commit your work,
+- git add . - adds all modified files to a staging area.
+- git commit -m "A short message exlaining your commit - commits all changes to a local repository.
+- git push - pushes all your commited changes to your Github repository.
+
+<br>
+
+<strong> <h3> Requirements </h3></strong>
+
+- Python 3
+- Pip
+- Git
+- AWS S3
+
+
+<strong> <h3> Heroku Deployment </h3></strong>
+<br>
+
+1. Log into Heroku
+2. Create a new app, choose a location closest to you
+3. Search for Heroku Postgres from the resources tab and add to your project
+4. Make sure to have dj_database_url and psycopg2 installed.
+```
+pip3 install dj_database_url
+pip3 install psycopg2
+```
+
+5. Login to the Heroku CLI - heroku login -i
+6. Run migrations on Heroku Postgres - heroku run python manage.py migrate
+7. Create a superuser - python manage.py createsuperuser
+8. Install gunicorn - pip3 install gunicorn
+9. Create a requirements.txt file - pip3 freeze > requirements.txt
+10. Create a Procfile (note the capital P), and add the following,
+```
+web: gunicorn project_name.wsgi:application
+```
+11. Disable Heroku from collecting static files - heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>
+12. Add the hostname to project settings.py file
+```
+ALLOWED_HOSTS = ['<you-app-name>.herokuapp.com', 'localhost']
+```
+
+13. Connect Heroku to you Github, by selecting Github as the deployment method and search for the github repository and pressing connect
+14. In Heroku, within settings, under config vars select Reveal config vars
+15. Add the following,
+```
+AWS_ACCESS_KEY_ID =	<your variable here>
+AWS_SECRET_ACCESS_KEY =	<your variable here>
+DATABASE_URL =	<added by Heroku when Postgres installed>
+DISABLE_COLLECTSTATIC =	1 
+EMAIL_HOST_PASS = <your variable here>
+EMAIL_HOST_USER = <your variable here>
+SECRET_KEY = <your variable here>
+STRIPE_PUBLIC_KEY = <your variable here>
+STRIPE_SECRET_KEY = <your variable here>
+STRIPE_WH_SECRET = <different from env.py>
+USE_AWS = True
+```
+
+16. Go back to the Deploy tab and under Automatic deploys choose Enable Automatic Deploys
+17. Back in your CLI add, commit and push your changes and Heroku will automatically deploy your app:
+```
+git add .
+git commit -m "Initial commit"
+git push
+```
+18. Your deployed site can be launched by clicking Open App from its page within Heroku.
+<br>
+<strong> <h3> AWS S3 Bucket setup </h3></strong>
+
+
+1. Create an Amazon AWS account
+2. Search for S3 and create a new bucket
+3. Allow public access
+4. Under Properties > Static website hosting
+- - Enable
+- - index.html as index.html
+- - save
+- - Under Permissions > CORS use the following:
+```
+[
+  {
+      "AllowedHeaders": [
+          "Authorization"
+      ],
+      "AllowedMethods": [
+          "GET"
+      ],
+      "AllowedOrigins": [
+          "*"
+      ],
+      "ExposeHeaders": []
+  }
+]
+```
+5. Under Permissions > Bucket Policy:
+- - Generate Bucket Policy and take note of Bucket ARN
+- - Chose S3 Bucket Policy as Type of Policy
+- - For Principal, enter *
+- - Enter ARN noted above
+- - Add Statement
+- - Generate Policy
+- - Copy Policy JSON Document
+- - Paste policy into Edit Bucket policy on the previous tab
+- - Save changes
+6. Under Access Control List (ACL):
+- - For Everyone (public access), tick List
+- - Accept that everyone in the world may access the Bucket
+- - Save changes
+<br>
+
+<strong> <h3> AWS IAM (Identity and Access Management) setup </h3></strong>
+
+
+1. From the IAM dashboard within AWS, select User Groups:
+- - Create a new group
+- - Click through and Create Group
+2. Select Policies:
+- - Create policy
+- - Under JSON tab, click Import managed policy
+- - Choose AmazongS3FullAccess
+- - Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
+- - Click next step and go to Review policy
+- - Give the policy a name and description of your choice
+- - Create policy
+3. Go back to User Groups and choose the group created earlier
+- - Under Permissions > Add permissions, choose Attach Policies and select the one just created
+- - Add permissions
+4. Under Users:
+- - Choose a user name
+- - Select Programmatic access as the Access type
+- - Click Next
+- - Add the user to the Group just created
+- - Click Next and Create User
+5. Download the .csv containing the access key and secret access key.
+<br>
+
+<strong> <h3> Connecting Heroku to AWS S3 </h3></strong>
+
+1. Install boto3 and django-storages
+```
+pip3 install boto3
+pip3 install django-storages
+pip3 freeze > requirements.txt
+```
+2. Add the values from the .csv you downloaded to your Heroku Config Vars under Settings:
+3. Delete the DISABLE_COLLECTSTATIC variable from your Cvars and deploy your Heroku app
+4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
+- - PLEASE MAKE SURE media AND static FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS
+
+<strong> <h2> Credits </h2></strong>
+<br>
+<strong> <h3> Product Images / Names / Descriptions </h3></strong>
+<br>
+
+- All the content relating to the products all came from the Casall website. Although the images were altered the original images were screen shots taken from items from there.
+- <a href="https://www.casall.com/en-eu/searchresults?q=KETTLEBELL">Casall</a>
+- - This project is made solely for educational purposes. There is no financial gain from the project.
+
+<br>
+<strong> <h3> Code </h3></strong>
+
+- A large amount of code came from the Code Institute, Boutique Ado Project.
+- 
+
+
+
