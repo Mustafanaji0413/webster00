@@ -266,3 +266,66 @@ WishList
 - After the user made a purchase, he/she is redirected to a checkout success page. The page shows the orders the user has made, along with the ordernumber and other usful information
 
 <img width="800" alt="Screenshot 2023-03-29 at 00 45 19" src="https://user-images.githubusercontent.com/115544231/228384452-72bd929a-6039-4da8-a908-e7a0378c7f57.png">
+
+
+
+-----------------------------------------------------------
+
+<strong> <h2> Technologies Used </h2></strong>
+
+- <a href="https://www.python.org/"> Python</a>
+-  The following Python modules were used on this project,
+- - asgiref==3.6.0
+- - boto3==1.26.96
+- - botocore==1.29.96
+- - dj-database-url==0.5.0
+- - Django==3.2
+- - django-allauth==0.41.0
+- - django-countries==7.2.1
+- - django-crispy-forms==1.14.0
+- - django-storages==1.13.2
+- - gunicorn==20.1.0
+- - jmespath==1.0.1
+- - oauthlib==3.2.2
+- - Pillow==9.4.0
+- - psycopg2==2.9.5
+- - python3-openid==3.2.0
+- - pytz==2022.7.1
+- - requests-oauthlib==1.3.1
+- - s3transfer==0.6.0
+- - sqlparse==0.4.3
+- - stripe==5.2.0
+
+- <a href="https://www.heroku.com/home">Heroku</a>
+- <a href="https://aws.amazon.com/"> AWS S3</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Web/HTML"> HTML</a>
+- <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics">CSS </a>
+- <a href="https://getbootstrap.com/"> Bootstrap</a>
+- <a href="https://jquery.com/"> jQuery</a>
+- <a href="https://www.javascript.com/"> JavaScript</a>
+- <a href="https://fonts.google.com/"> Google Fonts</a>
+- <a href="https://fontawesome.com/"> Font Awesome</a>
+- <a href="https://developer.chrome.com/docs/devtools/"> Google Developer Tools</a>
+- <a href="https://github.com/"> Github</a>
+- <a href="https://git-scm.com/"> Git </a>
+- <a href="https://www.gitpod.io/"> Gitpod</a>
+- <a href="https://app.grammarly.com/"> Grammerly </a>
+- <a href="https://validator.w3.org/"> W3C Markup Validation</a>
+- <a href=""> </a>
+
+
+-----------------------------------------------------------
+
+<strong> <h2> Testing </h2></strong>
+
+
+-----------------------------------------------------------
+
+<strong> <h2> Deployment </h2></strong>
+
+The master branch of this repository is the most current version and has been used for the deployed version of the site.
+
+The Code Institiue student template was used to create this project.
+
+<a href="https://github.com/Code-Institute-Org/gitpod-full-template">Code Institute Full Template</a>
+
