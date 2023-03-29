@@ -268,6 +268,40 @@ WishList
 <img width="800" alt="Screenshot 2023-03-29 at 00 45 19" src="https://user-images.githubusercontent.com/115544231/228384452-72bd929a-6039-4da8-a908-e7a0378c7f57.png">
 
 
+-----------------------------------------------------------
+
+<strong> <h2> Marketing  </h2></strong>
+
+<br>
+
+<strong> <h3> Plan  </h3></strong>
+
+Webster is a business to customer e-commerce platform, built and designed to sell products to the user. Before beginning this project I wrote a marketing plan which can be found here:
+<img width="619" alt="Screenshot 2023-03-29 at 15 25 43" src="https://user-images.githubusercontent.com/115544231/228552643-4094d172-5a5f-4601-9ae4-6d9aa0e098f5.png">
+ Marketing Strategy
+
+<br>
+
+To further enhance sales there is also a heiwa gallery Facebook page, that will display information about new exhibitions or prints that are for sale:
+
+<img width="319" alt="Screenshot 2023-03-13 at 18 45 44" src="https://user-images.githubusercontent.com/115544231/228543689-67607bc2-fcb4-47c5-8cf3-8481f7ce64c3.png">
+
+<br>
+
+Users are also able to subscribe to receive the gallery's newsletter, using the MailChimp form found in the footer.
+
+<img width="464" alt="Screenshot 2023-03-29 at 15 03 10" src="https://user-images.githubusercontent.com/115544231/228543965-3322106f-993d-4d0d-9e6f-fc8ebe914dfb.png">
+
+<br>
+
+<strong> <h3> SEO's  </h3></strong>
+
+I conducted SEO research to decide on the keywords and phrases that would be used across the website, I wrote a list of as many words and phrases I could think of and then using Google, I searched by these keywords to see the sort of websites that were returned.
+
+<img width="800" alt="Screenshot 2023-03-29 at 15 07 31" src="https://user-images.githubusercontent.com/115544231/228545120-35528649-fbef-4e92-ae51-9d244d7dadf8.png">
+
+<br>
+
 
 -----------------------------------------------------------
 
@@ -316,14 +350,14 @@ WishList
 
 -----------------------------------------------------------
 
-<strong> <h2> Testing </h2></strong>
+<strong> <h2> Ma </h2></strong>
 
 
 -----------------------------------------------------------
 
 <strong> <h2> Deployment </h2></strong>
 
-The master branch of this repository is the most current version and has been used for the deployed version of the site.
+The main branch of this repository is the most current version and has been used for the deployed version of the site.
 
 The Code Institiue student template was used to create this project.
 
@@ -482,7 +516,7 @@ pip3 freeze > requirements.txt
 3. Delete the DISABLE_COLLECTSTATIC variable from your Cvars and deploy your Heroku app
 4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
 - - PLEASE MAKE SURE media AND static FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS
-
+-----------------------------------------------------------
 <strong> <h2> Credits </h2></strong>
 <br>
 <strong> <h3> Product Images / Names / Descriptions </h3></strong>
@@ -496,7 +530,47 @@ pip3 freeze > requirements.txt
 <strong> <h3> Code </h3></strong>
 
 - A large amount of code came from the Code Institute, Boutique Ado Project.
-- 
+- <a href="https://boutique-ado0413.herokuapp.com/">Code Institute, Boutique Ado</a>
+- - Boutique Ado is a walkthrough project by Code Institute, this project gave students an introduction to Django/AWS S3/Stripe/Heroku Postgres
+- - The core functionality of Nourish and Lift is all taken from the Boutique Ado project.
+
+<br>
+<strong> <h3> Bootstrap </h3></strong>
+
+- The Bootstrap Library was used through the project. The project used version 4.6.
+- <a href="https://getbootstrap.com/">Bootstrap </a>
+- - Toasts/Navigation Bar/Forms/Dropdown Menu/Buttons, the core elements mentioned are all found in the Bootstrap components section and built upon.
+
+
+<br>
+<strong> <h3> Django Documentation </h3></strong>
+
+- Django have amazing documentation with a tutorial project and in depth explanations on core components.
+- <a href="https://docs.djangoproject.com/en/3.2/"> Django Documentation </a>
+
+<br>
+<strong> <h2> Aknowledgements </h2></strong>
+<br>
+<strong> <h3> Harry Dhillon </h3></strong>
+
+- My mentor thorught the entire program.
+- - He has been a huge help and support throughout this project, not only to me but to countless other students. Takes time out of his day to help and respond to messages and has always been extremely courteous and respectful.
+
+
+<br>
+<strong> <h3> Code Institue Tutors </h3></strong>
+
+- Course Tutors
+- - The tutors at code institute has been a major help, guiding me through torubles and always beeing there to ask sometimes silly questions with a great attitude. Without them i would have had a much more difficult time. Thank you!
+
+Finally thank you for viewing this project. I hope whoever you are, that you are in good health and doing well. God Bless!
+
+
+
+
+
+
+
 
 
 
