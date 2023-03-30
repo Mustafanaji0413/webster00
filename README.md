@@ -407,7 +407,23 @@ To fix this issue, I updated the code to iterate through the first wishlist (i.e
 
 I opted to restrict users to creating only one wishlist to simplify the functionality of the application.
 
+<b>
 
+<p>
+
+- Another issue i ran into was the custom model allows users to add a product to their wishlist. Initially, I thought that everything was set up correctly, but I encountered an error where the page was not found. Furthermore, when I tried to add a product to the wishlist, I received the error message "cannot query 'admin': Must be 'UserProfile' instance."
+
+    Upon further investigation, I realized that the Wishlist model was trying to relate to the UserProfile instead of the User model, which was the root cause of the error. To fix this, I needed to use the UserProfile instead of the User model in the add_to_wishlist view and others:
+
+    ```
+    user = request.user.userprofile
+    ```
+
+    I eventually figured out that I needed to create two views: one to display the user's wishlist without any parameters, and another to handle CRUD operations on wishlist items, which requires a product_id parameter. I also created a template that displays all products in the wishlist with links to add, remove, etc. that redirect to paths that require the product_id parameter.
+
+    After modifying and tweaking the code, I was able to get everything working properly.
+
+</p>
 
 
 
