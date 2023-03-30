@@ -8,8 +8,8 @@ from .models import Contact
 
 @login_required
 def contact_admin(request):
-    # Initialize messages with a default value
-    messages = Contact.objects.none()
+    # Initialize contact_messages with a default value
+    contact_messages = Contact.objects.none()
 
     if request.method == 'POST':
         message_id = request.POST.get('message_id')
@@ -21,10 +21,10 @@ def contact_admin(request):
                 contact.save()
 
     # Retrieve all messages and order them by created_at date
-    messages = Contact.objects.all().order_by('-created_at')
+    contact_messages = Contact.objects.all().order_by('-created_at')
 
     # Pass the messages to the template
-    return render(request, 'contact_admin.html', {'messages': messages})
+    return render(request, 'contact_admin.html', {'contact_messages': contact_messages})
 
 
 def contact(request):
@@ -36,7 +36,8 @@ def contact(request):
             subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
             send_mail(subject, message, email, [settings.DEFAULT_FROM_EMAIL])
-            Contact.objects.create(name=name, email=email, subject=subject, message=message)
+            Contact.objects.create(
+                name=name, email=email, subject=subject, message=message)
             return render(request, 'success.html')
     else:
         form = ContactForm()

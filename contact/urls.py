@@ -6,4 +6,3 @@ urlpatterns = [
     path('contact/success/', contact_success, name='contact_success'),
     path('admin/contact/', contact_admin, name='contact_admin'),
 ]
-
