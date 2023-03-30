@@ -492,8 +492,6 @@ input[name='q']::placeholder {
         z-index: 1030;
     }
 
-    
-
     .header-container {
         padding-top: 80px;
     }
@@ -558,7 +556,8 @@ input[name='q']::placeholder {
     }
 
     .contact-admin-2{
-        margin-top: 20%;
+        margin-top: 25%;
+        margin-bottom: 5%;
     }
     
 
