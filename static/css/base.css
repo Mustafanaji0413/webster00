@@ -268,12 +268,7 @@ input[name='q']::placeholder {
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
-  .container {
-    max-width: 80%;
-  }
-}
+
 
 /* Allauth form formatting */
 
@@ -504,6 +499,13 @@ input[name='q']::placeholder {
     }
 } 
 
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+    .container {
+      max-width: 80%;
+    }
+  }
 
 /* pad the top a bit when navbar is collapsed on mobile */
 @media (max-width: 991px) {

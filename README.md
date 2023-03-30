@@ -12,7 +12,7 @@ Welcome to Webster.
 
 Webster is my fourth and final project, part of the Code Institute, Full Stack Web Developer Course.
 
-The purpose of this project was a build a full-stack site based around a business logic used to control a centrally-owned dataset. The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Stripe handles online test payments and Heroku Postgres as a relational database.
+The purpose of this project was a build a full-stack site based on a business logic used to control a centrally-owned dataset. The technologies used for this project are HTML, CSS, JavaScript, Python, and Django. Stripe handles online test payments and Heroku Postgres as a relational database.
 
 Webster is a fictional brand, purchases on this project are accepted via Stripes test card details. For further information on which card number you should use, please refer to Stripe's official documentation.
 
@@ -26,7 +26,7 @@ This project is for educational purposes only, No commercial revenue is generate
 <strong> <h2> UXD - User Experience Design </h2></strong>
 
 <p>
-A large part of the inspiration behind the planning for this project came from Code Institutes teaching course.
+A large part of the inspiration behind the planning for this project came from the Code Institutes' teaching course.
 
 By keeping the user in mind throughout the design and development of the project, it would be easier to make the user experience a positive one.
 
@@ -48,7 +48,7 @@ The planning of the project is broken into 5 planes,
 - As a creator, I want the site to be easy to navigate.
 - As a creator, I want to allow users to filter through products.
 - As a creator, I want to provide users with updates to any actions.
-- As a creator, I want to allows admins to Add/Edit/Delete products to/from the store.
+- As a creator, I want to allow admins to Add/Edit/Delete products to/from the store.
 
 <br>
 
@@ -69,14 +69,14 @@ The planning of the project is broken into 5 planes,
 - As a shopper, I want to be to view all products, so that I can decide what I want to buy.
 - As a shopper, I want to be able to view products in more detail.
 - As a shopper, I want to be able to view reviews left by other customers for products, so that I can understand whether the product is worth purchasing.
-- As a shopper, I want to be able to see a confirmation when a product is added to my shopping bag, so that I can avoid accidentally adding multiple quantities of the same item.
+- As a shopper, I want to be able to see a confirmation when a product is added to my shopping bag so that I can avoid accidentally adding multiple quantities of the same item.
 - As a shopper, I want to be able to view my bag, so that I can see what is in my bag and adjust quantities
 
 <strong><h3>Customers (Logged in) Stories</h3></strong>
 - As a logged-in user, I want to be able to save my details, so that I can avoid retyping my details again.
 - As a logged-in user, I want to have my past orders viewable, so that I can verify what my past order was and view the order number.
 - As a logged-in user, I want to be able to leave reviews on a product, so that other users may be able to benefit from my opinions on my purchase.
-- As a logged-in user, I want to be able to edit my reviews, so that I can amend any errors or in case I change my opinion.
+- As a logged-in user, I want to be able to edit my reviews, so that I can amend any errors or in cases I change my opinion.
 - As a logged-in user, I want to be able to add products to my wishlist, so that I can view those products later.
 - As a logged-in user, I was to be able to remove products from my wishlist, so that my wishlist is only full of products I want to be saved.
 
@@ -87,7 +87,7 @@ My user stories were obtained by doing research into other stores and seeing how
 
 <strong> <h2> The Scope Plane </h2></strong>
 
-The features that I had thought about before designing the project and my deadline was not achievable. I opted for a phased release approach.
+The features that I had thought about before designing the project and my deadline were not achievable. I opted for a phased-release approach.
 
 I was able to ascertain which features were more important and should be working on my initial deployment, and which features I could add later.
 
@@ -97,10 +97,10 @@ My plan for a phased deployment,
 
 A project that would satisfy my user stories.
 Home Page with an introduction
-Navbar allowing the user to navigate to different pages
+Navbar allows the user to navigate to different pages
 Products page allowing users to view all products.
 A product detail page.
-E-commerce functionality allowing the user to make purchases.
+E-commerce functionality allows the user to make purchases.
 
 <strong><h3>Phase 2</strong></h3>
 
@@ -129,7 +129,7 @@ Review feedback gathered to understand what can be improved.
 
 <strong>Order</strong>
 
-- The order model is connected to the User Profile, allows the user to view their previous orders.
+- The order model is connected to the User Profile, which allows the user to view their previous orders.
 
 <strong>Product</strong>
 
@@ -145,7 +145,7 @@ WishList
 <strong>WishList</strong>
 
 - The wishlist model allows users to save items for quicker access. These items can be removed.
-- This model also acts as a container for the WishListItem model. Just like the Order model, each wishlist is unique to each user but connecting to the user ID.
+- This model also acts as a container for the WishListItem model. Just like the Order model, each wishlist is unique to each user but connects to the user ID.
 
 
 <strong> <h2> The Surface Plane </h2></strong>
@@ -163,7 +163,7 @@ WishList
 
 ### Home page
 
-- Home page features a short text that encourages them to start shopping, and a button to the products page.
+- The home page features a short text that encourages them to start shopping and a button to the products page.
 
 <img width="1439" alt="Screenshot 2023-03-29 at 00 37 33" src="https://user-images.githubusercontent.com/115544231/228382258-d9109290-f1c7-41d6-a38e-703ff537f666.png">
 
@@ -186,7 +186,7 @@ WishList
 
 - Users can choose to view the reviews left by users for a specific product.
 - Logged-in users can post a review, whereas users not logged in are shown a small message to log in to leave a product review.
-- User choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
+- Users choosing the leave a review can choose to pick a title, give a star rating out of five, and write a review.
 
 <img width="800" alt="Screenshot 2023-03-29 at 00 41 38" src="https://user-images.githubusercontent.com/115544231/228382897-d5ae4fd7-93e4-4e9d-811b-b7b785a695ef.png">
 
@@ -194,7 +194,7 @@ WishList
 ### Toasts
 
 - Almost all actions provide feedback to the user via the bootstrap toasts written to provide user feedback.
-- Users shopping can view the current items within the bag and total cost.
+- Users shopping can view the current items within the bag and the total cost.
 - At the bottom of the toast is a link to the checkout page.
 
 <img width="400" alt="Screenshot 2023-03-29 at 00 42 53" src="https://user-images.githubusercontent.com/115544231/228383245-74728365-cd30-497c-9e39-4344a7f5bc40.png">
@@ -203,9 +203,9 @@ WishList
 ### Shopping Bag
 
 - The shopping bag page is fully responsive, showing users a picture of the item, name, price per unit, and total price.
-- Users can also choose to increase/decrease the number of items in their bag, click the update button to have the prices update.
+- Users can also choose to increase/decrease the number of items in their bag, and click the update button to have the prices updated.
 - Users can click the remove link and have all the items within the bag removed, regardless of quantity.
-- At the bottom of the page user can find the cost of the bag, cost of delivery, the total and how much they must spend to be eligible for free delivery.
+- At the bottom of the page user can find the cost of the bag, the cost of delivery, the total, and how much they must spend to be eligible for free delivery.
 
 <img width="800" alt="Screenshot 2023-03-29 at 00 43 28" src="https://user-images.githubusercontent.com/115544231/228383325-b51f0703-69da-425a-aefb-c689ee36cdbf.png">
 
@@ -220,7 +220,7 @@ WishList
 ### Footer
 
 - Almost every page throughout the project has a footer with social media links.
-- Clicking the social media like redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
+- Clicking the social media redirect the user to the social media page in a new tab, so as not to disrupt the user experience.
 - The footer also contains a link to a contact form so that the user can reach out to us.
 - On the footer there is also a Mail Chimp newsletter subscription field, that lets the user enter their email to subscribe to our weekly newsletter. 
 
@@ -237,17 +237,17 @@ WishList
 
 ### My profile
 
-- The user can navigate to 'My Profile' page through the navigation bar where they can see their default delivery information.
-- The 'My Profile' page also shows the privous orders the user has purchased along with the order number od that order. 
+- The user can navigate to the 'My Profile' page through the navigation bar where they can see their default delivery information.
+- The 'My Profile' page also shows the private orders the user has purchased along with the order number of that order. 
 
 <img width="800" alt="Screenshot 2023-03-29 at 00 48 25" src="https://user-images.githubusercontent.com/115544231/228384003-413e08a9-a320-4eca-bac3-1f7c161ba5a7.png">
 
 
 ### Contact Form
 
-- On the contact form the user has the option to write us a message by entering some rwquired fields and sending it to us.
-- After submitting a message the user is redriceted to a successs and sees a message on the screen that we have reccived the message.
-- The Contact page also includes a button that takes the user back to the home page for a better user experiance.
+- On the contact form the user has the option to write us a message by entering some required fields and sending it to us.
+- After submitting a message the user is redirected to success and sees a message on the screen that we have received the message.
+- The Contact page also includes a button that takes the user back to the home page for a better user experience.
 
 <img width="650" alt="Screenshot 2023-03-29 at 00 49 15" src="https://user-images.githubusercontent.com/115544231/228384114-c1a3182d-de37-4876-b0a5-23dc9191605e.png">
 
@@ -255,7 +255,7 @@ WishList
 ### Admin Page
 
 - If the user is a superuser, he/she has the option to view the Admin page.
-- On the Admin page the user add products to the store.
+- On the Admin page the user adds products to the store.
 
 <img width="800" alt="Screenshot 2023-03-29 at 00 50 20" src="https://user-images.githubusercontent.com/115544231/228384248-b62ad541-40c3-4186-a8ed-dab98243fe53.png">
 
@@ -263,7 +263,7 @@ WishList
 
 ### Checkout Success
 
-- After the user made a purchase, he/she is redirected to a checkout success page. The page shows the orders the user has made, along with the ordernumber and other usful information
+- After the user made a purchase, he/she is redirected to a checkout success page. The page shows the orders the user has made, along with the order number and other useful information
 
 <img width="800" alt="Screenshot 2023-03-29 at 00 45 19" src="https://user-images.githubusercontent.com/115544231/228384452-72bd929a-6039-4da8-a908-e7a0378c7f57.png">
 
@@ -276,13 +276,13 @@ WishList
 
 <strong> <h3> Plan  </h3></strong>
 
-Webster is a business to customer e-commerce platform, built and designed to sell products to the user. Before beginning this project I wrote a marketing plan which can be found here:
+Webster is a business-to-customer e-commerce platform, built and designed to sell products to the user. Before beginning this project I wrote a marketing plan which can be found here:
 <img width="619" alt="Screenshot 2023-03-29 at 15 25 43" src="https://user-images.githubusercontent.com/115544231/228552643-4094d172-5a5f-4601-9ae4-6d9aa0e098f5.png">
  Marketing Strategy
 
 <br>
 
-To further enhance sales there is also a heiwa gallery Facebook page, that will display information about new exhibitions or prints that are for sale:
+To further enhance sales there is also a Webster gallery Facebook page, which will display information about new exhibitions or prints that are for sale:
 
 <img width="319" alt="Screenshot 2023-03-13 at 18 45 44" src="https://user-images.githubusercontent.com/115544231/228543689-67607bc2-fcb4-47c5-8cf3-8481f7ce64c3.png">
 
@@ -296,7 +296,7 @@ Users are also able to subscribe to receive the gallery's newsletter, using the 
 
 <strong> <h3> SEO's  </h3></strong>
 
-I conducted SEO research to decide on the keywords and phrases that would be used across the website, I wrote a list of as many words and phrases I could think of and then using Google, I searched by these keywords to see the sort of websites that were returned.
+I conducted SEO research to decide on the keywords and phrases that would be used across the website, I wrote a list of as many words and phrases I could think of, and then using Google, I searched by these keywords to see the sort of websites that were returned.
 
 <img width="800" alt="Screenshot 2023-03-29 at 15 07 31" src="https://user-images.githubusercontent.com/115544231/228545120-35528649-fbef-4e92-ae51-9d244d7dadf8.png">
 
@@ -376,6 +376,38 @@ All of my code has been validated using an online validator specific to the lang
 
 - - Used to test my Python code for any issues or errors.
 
+<br>
+
+<strong> <h3> Automated Testing </h3></strong>
+
+I have used the Coverage library throughout testing to keep track of how much of my Python code was covered by the tests I had written. From running the coverage report my website has 68% of my code tested.
+
+To generate your own coverage report from the command line:
+
+1. Install the package using pip3 install coverage
+2. Run coverage run manage.py test
+3. Then coverage html to generate the report
+
+
+
+<br>
+
+<strong> <h3> Bugs and Fixes </h3></strong>
+
+Whilst in development there were several bugs that I had to resolve.
+
+- One issue that I encountered while working on the project was with the "Add to Wishlist" button on the product detail page. Although it successfully added the product to the wishlist, the products were not displaying in the wishlist. After examining the code, it became clear that the code was returning multiple wishlists. As a result, attempting to loop through the products with "for product in wishlist.products.all" was not working since wishlist was a list of wishlists itself.
+
+To fix this issue, I updated the code to iterate through the first wishlist (i.e. at index 0) in the list. Depending on the project requirements, two different approaches could be taken: restricting users to creating only one wishlist or allowing them to have multiple wishlists and displaying each wishlist by name in a separate view to view its contents.
+
+<br>
+
+![image](https://user-images.githubusercontent.com/115544231/228837034-114964b1-12e2-4136-995d-23f779933f17.png)
+
+
+I opted to restrict users to creating only one wishlist to simplify the functionality of the application.
+
+
 
 
 
@@ -387,7 +419,7 @@ All of my code has been validated using an online validator specific to the lang
 
 The main branch of this repository is the most current version and has been used for the deployed version of the site.
 
-The Code Institiue student template was used to create this project.
+The Code Institute student template was used to create this project.
 
 <a href="https://github.com/Code-Institute-Org/gitpod-full-template">Code Institute Full Template</a>
 
@@ -395,10 +427,10 @@ The Code Institiue student template was used to create this project.
 - Give your repository a name, and description if you wish.
 - Click the Create Repository from Template to create your repository.
 - Click the Gitpod button to create a gitpod workspace, this can take a few minutes.
-- When working on project using Gitpod, please open the workspace from Gitpod, this will open your previous workspace rather than creating a new one. Use the following commands to commit your work,
+- When working on a project using Gitpod, please open the workspace from Gitpod, this will open your previous workspace rather than creating a new one. Use the following commands to commit your work,
 - git add . - adds all modified files to a staging area.
-- git commit -m "A short message exlaining your commit - commits all changes to a local repository.
-- git push - pushes all your commited changes to your Github repository.
+- git commit -m "A short message explaining your commit - commits all changes to a local repository.
+- git push - pushes all your committed changes to your GitHub repository.
 
 <br>
 
@@ -415,15 +447,15 @@ The Code Institiue student template was used to create this project.
 
 1. Log into Heroku
 2. Create a new app, choose a location closest to you
-3. Search for Heroku Postgres from the resources tab and add to your project
+3. Search for Heroku Postgres from the resources tab and add it to your project
 4. Make sure to have dj_database_url and psycopg2 installed.
 ```
 pip3 install dj_database_url
 pip3 install psycopg2
 ```
 
-5. Login to the Heroku CLI - heroku login -i
-6. Run migrations on Heroku Postgres - heroku run python manage.py migrate
+5. log in to the Heroku CLI - heroku login -i
+6. Run migrations on Heroku Postgres - Heroku run python manage.py migrate
 7. Create a superuser - python manage.py createsuperuser
 8. Install gunicorn - pip3 install gunicorn
 9. Create a requirements.txt file - pip3 freeze > requirements.txt
@@ -431,20 +463,20 @@ pip3 install psycopg2
 ```
 web: gunicorn project_name.wsgi:application
 ```
-11. Disable Heroku from collecting static files - heroku config:set DISABLE_COLLECTSTATIC=1 --app <your-app-name>
-12. Add the hostname to project settings.py file
+11. Disable Heroku from collecting static files - heroku config: set DISABLE_COLLECTSTATIC=1 --app <your-app-name>
+12. Add the hostname to the project settings.py file
 ```
 ALLOWED_HOSTS = ['<you-app-name>.herokuapp.com', 'localhost']
 ```
 
-13. Connect Heroku to you Github, by selecting Github as the deployment method and search for the github repository and pressing connect
+13. Connect Heroku to your Github, by selecting Github as the deployment method and searching for the GitHub repository, and pressing connect
 14. In Heroku, within settings, under config vars select Reveal config vars
 15. Add the following,
 ```
-AWS_ACCESS_KEY_ID =	<your variable here>
-AWS_SECRET_ACCESS_KEY =	<your variable here>
-DATABASE_URL =	<added by Heroku when Postgres installed>
-DISABLE_COLLECTSTATIC =	1 
+AWS_ACCESS_KEY_ID = <your variable here>
+AWS_SECRET_ACCESS_KEY = <your variable here>
+DATABASE_URL =  <added by Heroku when Postgres installed>
+DISABLE_COLLECTSTATIC = 1 
 EMAIL_HOST_PASS = <your variable here>
 EMAIL_HOST_USER = <your variable here>
 SECRET_KEY = <your variable here>
@@ -455,7 +487,7 @@ USE_AWS = True
 ```
 
 16. Go back to the Deploy tab and under Automatic deploys choose Enable Automatic Deploys
-17. Back in your CLI add, commit and push your changes and Heroku will automatically deploy your app:
+17. Back in your CLI add, commit, and push your changes and Heroku will automatically deploy your app:
 ```
 git add .
 git commit -m "Initial commit"
@@ -513,18 +545,18 @@ git push
 - - Create a new group
 - - Click through and Create Group
 2. Select Policies:
-- - Create policy
+- - Create a policy
 - - Under JSON tab, click Import managed policy
 - - Choose AmazongS3FullAccess
 - - Edit the resource to include the Bucket ARN noted earlier when creating the Bucket Policy
 - - Click next step and go to Review policy
 - - Give the policy a name and description of your choice
-- - Create policy
+- - Create a policy
 3. Go back to User Groups and choose the group created earlier
 - - Under Permissions > Add permissions, choose Attach Policies and select the one just created
 - - Add permissions
 4. Under Users:
-- - Choose a user name
+- - Choose a username
 - - Select Programmatic access as the Access type
 - - Click Next
 - - Add the user to the Group just created
@@ -544,13 +576,18 @@ pip3 freeze > requirements.txt
 3. Delete the DISABLE_COLLECTSTATIC variable from your Cvars and deploy your Heroku app
 4. With your S3 bucket now set up, you can create a new folder called media (at the same level as the newly added static folder) and upload any required media files to it.
 - - PLEASE MAKE SURE media AND static FILES ARE PUBLICLY ACCESSIBLE UNDER PERMISSIONS
+
 -----------------------------------------------------------
+
 <strong> <h2> Credits </h2></strong>
-<br>
-<strong> <h3> Product Images / Names / Descriptions </h3></strong>
+
 <br>
 
-- All the content relating to the products all came from the Casall website. Although the images were altered the original images were screen shots taken from items from there.
+<strong> <h3> Product Images / Names / Descriptions </h3></strong>
+
+<br>
+
+- All the content relating to the products came from the Casall website. Although the images were altered the original images were screenshots taken of items from there.
 - <a href="https://www.casall.com/en-eu/searchresults?q=KETTLEBELL">Casall</a>
 - - This project is made solely for educational purposes. There is no financial gain from the project.
 
@@ -565,7 +602,7 @@ pip3 freeze > requirements.txt
 <br>
 <strong> <h3> Bootstrap </h3></strong>
 
-- The Bootstrap Library was used through the project. The project used version 4.6.
+- The Bootstrap Library was used throughout the project. The project used version 4.6.
 - <a href="https://getbootstrap.com/">Bootstrap </a>
 - - Toasts/Navigation Bar/Forms/Dropdown Menu/Buttons, the core elements mentioned are all found in the Bootstrap components section and built upon.
 
@@ -573,7 +610,7 @@ pip3 freeze > requirements.txt
 <br>
 <strong> <h3> Django Documentation </h3></strong>
 
-- Django have amazing documentation with a tutorial project and in depth explanations on core components.
+- Django has amazing documentation with a tutorial project and in-depth explanations of core components.
 - <a href="https://docs.djangoproject.com/en/3.2/"> Django Documentation </a>
 
 <br>
@@ -581,7 +618,7 @@ pip3 freeze > requirements.txt
 <br>
 <strong> <h3> Harry Dhillon </h3></strong>
 
-- My mentor thorught the entire program.
+- My mentor throughout the entire program.
 - - He has been a huge help and support throughout this project, not only to me but to countless other students. Takes time out of his day to help and respond to messages and has always been extremely courteous and respectful.
 
 
@@ -589,16 +626,6 @@ pip3 freeze > requirements.txt
 <strong> <h3> Code Institue Tutors </h3></strong>
 
 - Course Tutors
-- - The tutors at code institute has been a major help, guiding me through torubles and always beeing there to ask sometimes silly questions with a great attitude. Without them i would have had a much more difficult time. Thank you!
+- - The tutors at code institute have been a major help, guiding me through troubles and always being there to ask sometimes silly questions with a great attitude. Without them, I would have had a much more difficult time. Thank you!
 
-Finally thank you for viewing this project. I hope whoever you are, that you are in good health and doing well. God Bless!
-
-
-
-
-
-
-
-
-
-
+Finally thank you for viewing this project. I hope whoever you are, you are in good health and doing well. God Bless!

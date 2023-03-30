@@ -8,23 +8,23 @@ from .models import Contact
 
 @login_required
 def contact_admin(request):
+    # Initialize messages with a default value
+    messages = Contact.objects.none()
+
     if request.method == 'POST':
         message_id = request.POST.get('message_id')
-        status = request.POST.get('status')
+        status = request.POST.get(f"status_{message_id}")
         if message_id and status:
             contact = Contact.objects.filter(id=message_id).first()
             if contact:
                 contact.status = status
                 contact.save()
+
+    # Retrieve all messages and order them by created_at date
     messages = Contact.objects.all().order_by('-created_at')
-    status_filter = request.GET.get('status_filter', 'unread')
-    if status_filter == 'read':
-        messages = messages.filter(status='read')
-    elif status_filter == 'handled':
-        messages = messages.filter(status='handled')
-    else:
-        messages = messages.filter(status='unread')
-    return render(request, 'contact_admin.html', {'messages': messages, 'status_filter': status_filter})
+
+    # Pass the messages to the template
+    return render(request, 'contact_admin.html', {'messages': messages})
 
 
 def contact(request):

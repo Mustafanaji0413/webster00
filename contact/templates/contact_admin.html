@@ -6,65 +6,27 @@
   <h1 class="contact-admin">Contact Messages</h1>
   <div class="row">
     <div class="col-12">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link{% if status == 'unread' %} active{% endif %}" href="?status=unread">Unread</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link{% if status == 'read' %} active{% endif %}" href="?status=read">Read</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link{% if status == 'handled' %} active{% endif %}" href="?status=handled">Handled</a>
-        </li>
-      </ul>
-      <div class="table-responsive">
-        <form method="post">
-          {% csrf_token %}
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th>Subject</th>
-                <th>Name</th>
-                <th>Email</th>
-                <th>Message</th>
-                <th>Created At</th>
-                <th>Status</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {% for message in messages %}
-              <tr>
-                <td>{{ message.subject }}</td>
-                <td>{{ message.name }}</td>
-                <td>{{ message.email }}</td>
-                <td>{{ message.message }}</td>
-                <td>{{ message.created_at }}</td>
-                <td>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ message.id }}_status" value="unread"{% if message.status == 'unread' %} checked{% endif %}>
-                    <label class="form-check-label">Unread</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ message.id }}_status" value="read"{% if message.status == 'read' %} checked{% endif %}>
-                    <label class="form-check-label">Read</label>
-                  </div>
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="{{ message.id }}_status" value="handled"{% if message.status == 'handled' %} checked{% endif %}>
-                    <label class="form-check-label">Handled</label>
-                  </div>
-                </td>
-                <td>
-                  <button type="submit" name="{{ message.id }}_submit" class="btn btn-primary">Save</button>
-                </td>
-              </tr>
-              {% endfor %}
-            </tbody>
-          </table>
-        </form>
-      </div>
+      <form method="post">
+        {% csrf_token %}
+        <div class="row">
+          {% for message in messages %}
+          <div class="col-md-6 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ message.subject }}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">{{ message.name }}</h6>
+                <p class="card-text">{{ message.message }}</p>
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item"><strong>Email:</strong> {{ message.email }}</li>
+                <li class="list-group-item"><strong>Created At:</strong> {{ message.created_at }}</li>
+              </ul>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </form>
     </div>
   </div>
 </div>
 {% endblock %}
-
