@@ -426,6 +426,202 @@ I opted to restrict users to creating only one wishlist to simplify the function
 </p>
 
 
+-----------------------------------------------------------
+
+<strong> <h2> Manual Testing </h2></strong>
+
+<br>
+
+<a href="">Back to main README </a>
+
+<br>
+
+<strong> <h3> Epic 1 - Core Functionality: </h3></strong>
+
+1. As a user I can intuitively navigate through the site so that I can view desired content.
+2. As a user I can find a navigation bar and footer so that I can see what content there is on the website.
+
+- The navigation bar is fixed at the top of the screen, meaning it is always seen by the user, allowing the user to navigate through the content easily & intuitively. Each nav link is named with an obvious link to the page content, for the shop and admin links there are dropdowns for subsections of the website so that there isn't too much information in the navbar.
+
+<img width="800" alt="Screenshot 2023-03-30 at 22 56 16" src="https://user-images.githubusercontent.com/115544231/228962897-eff5b82f-4a8d-4494-938f-2e93b14eedfd.png">
+
+
+- The footer is at the bottom of the page but isn't fixed and contains key information about the store. Contact details, social media links & the contactform are all items that will be frequently searched for by a user, so placing them in the footer makes them easier to find thus ensuring that the user can obtain key information quickly.
+
+<img width="800" alt="Screenshot 2023-03-30 at 22 57 32" src="https://user-images.githubusercontent.com/115544231/228963003-deafa750-dca8-441d-ac34-b7db5e9508af.png">
+
+
+3. As a user I am notified about any changes I have made so that I have a clear understanding of what has been completed/updated/failed.
+
+- I have used bootstrap toasts to display messages to the user at various points throughout their customer journey. The success toast is used often and when adding a product to the basket also displays a short basket overview:
+
+<img width="344" alt="Screenshot 2023-03-30 at 22 59 33" src="https://user-images.githubusercontent.com/115544231/228963236-1dc6ab08-bd82-4ad9-8b5f-865e7fc86f86.png">
+
+
+- I have also used info, warning and error toasts to display various other messages; this ensures the user has awareness of any changes that have been made or have been unsuccessful:
+
+<img width="250" alt="Screenshot 2023-03-30 at 23 01 50" src="https://user-images.githubusercontent.com/115544231/228963712-b9c02ab9-fe42-4991-947a-173c89b5a97f.png">
+<br>
+<img width="250" alt="Screenshot 2023-03-30 at 23 01 18" src="https://user-images.githubusercontent.com/115544231/228963715-92d95ca7-57d0-47df-9619-8c072bc26479.png">
+
+5. As a user I can access the website on both mobile and desktop so that I can view the information regardless of my location.
+
+- As I have used bootstrap the website is entirely responsive and can be viewed on any size screen and have the same functionality; however, some non-critical content has been hidden on smaller screens to enhance the user experience.
+
+<img width="400" alt="Screenshot 2023-03-30 at 23 08 03" src="https://user-images.githubusercontent.com/115544231/228964876-e79d12b5-4a91-42de-b4b8-8468dcfdd33f.png">
+<br>
+<img width="400" alt="Screenshot 2023-03-30 at 23 05 46" src="https://user-images.githubusercontent.com/115544231/228964882-5cab8b4c-4280-4481-8f9b-d8ac08fa467d.png">
+
+<br>
+
+<strong> <h3> Epic 2 - Products: </h3></strong>
+
+<br>
+
+6. As a user I can view all products and available to buy.
+
+- Using the shop nav link the user is directed to the all_products page, this is a view that returns all products in the product model.
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 11 46" src="https://user-images.githubusercontent.com/115544231/228966175-4a4dbc66-1fa1-4586-b3b1-4657f3a7fdca.png">
+
+
+7. As a user I can easily find all of the relevant information about the products so that I can make informed decisions before purchasing.
+
+- Each product card displays a title, wheight, price and category giving the user all information they could want before deciding to buy.
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 13 44" src="https://user-images.githubusercontent.com/115544231/228965968-34fb168b-4cfb-44e5-a4a5-3ad1d9a85be5.png">
+
+
+
+
+<br>
+
+<strong> <h3> Epic 3 - Orders/Basket: </h3></strong>
+
+<br>
+
+8. As a user I am able to process orders by making a card payment.
+
+- Using Stripe, each time the checkout page is loaded a payment intent is created and a card element is injected into the page. Using the test card details from the Stripe documentation you can test the checkout process, if successful the user is redirected to the checkout success page.
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 18 04" src="https://user-images.githubusercontent.com/115544231/228966774-ee747288-52c8-4c44-85fc-0ca349b5bd1d.png">
+
+
+9. As a user I can view a breakdown of their current basket so that I can make changes if required.
+
+10. The basket page displays all of the information regarding the users current basket, product name & image, subtotal and quantity.
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 20 08" src="https://user-images.githubusercontent.com/115544231/228967269-62988ee6-180f-4872-84b7-377c39b0119b.png">
+
+
+- The plus or minus buttons will change the quantity in the select box and then pressing update pushes those changes to the user's current basket.
+
+11. As a user I receive order confirmations to be sure my order has been processed.
+
+- Upon submitting the payment form, if successful and the user is redirected to checkout success then the send_confirmation_email function is called, which uses the email address from the order form, this function sends an email that has the order total, shipping details, order number and products purchased in:
+
+<br>
+
+<strong> <h3> Epic 5 - Admin Functionality: </h3></strong>
+
+<br>
+
+12. As an admin user I can log in so that I can access the site's backend.
+
+- Using a specified superuser account an admin user can access the /admin URL and login, they will then be taken to the 'Django Administration' page:
+
+13. As an admin user I am able to log in to see the product management page so that I can make changes in the front end.
+
+- Once logged in as an admin superuser the navbar displays admin, clicking this shows the below menu:
+
+<img width="339" alt="Screenshot 2023-03-30 at 23 21 18" src="https://user-images.githubusercontent.com/115544231/228967547-f51ac5d7-0e1d-42f9-a552-4ed013100047.png">
+
+- From here, if the user clicks add product they are taken to the product management page. This page displays a form the admin can fill out to add a product.
+
+14. As an admin user I can add/edit/remove items from the product model so that I can make sure the website is up to date and accurately reflects what is being sold.
+
+15. The edit button takes the user to a specified edit page, there is a form pre-populated using the product instance and the user can update the information and submit the form. 
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 23 20" src="https://user-images.githubusercontent.com/115544231/228967872-4d5eefe6-1083-41e7-9c1e-b48fa530ad10.png">
+
+
+- If the user clicks delete product then a modal pops up to ensure that the user definitely wants to delete the product and has not pressed this by mistake.
+
+- If the user clicks yes, delete then the product is deleted from the model, the user is taken back to the product page and a toast confirming the deletion appears.
+
+<img width="447" alt="Screenshot 2023-03-30 at 23 24 15" src="https://user-images.githubusercontent.com/115544231/228968058-4b2c67a2-5441-4623-8aa9-0c0d1bc5c1ff.png">
+
+
+
+<br>
+
+<strong> <h3> Epic 6 -  User Account: </h3></strong>
+
+<br>
+
+16. As a user I can register & login so that I can view my orders/wishlist.
+
+- Once a user is logged in, using the my profile link in the navbar will bring the user to their account overview page. From here they can access either their personal details, previous orders or wishlist.
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 26 29" src="https://user-images.githubusercontent.com/115544231/228968481-9d59323b-f8d9-44b3-a2c5-0bec2231d139.png">
+
+
+17. As a user I can easily see if I'm logged in or not so that I can choose to log in or log out.
+
+<img width="124" alt="Screenshot 2023-03-30 at 23 27 17" src="https://user-images.githubusercontent.com/115544231/228968625-54f8212b-3a90-49ce-8172-ceca35c4ca67.png">
+
+
+- The navbar links on the right-hand side change depending on the authentication state of the user, if logged in then profile, contact & logout show:
+
+18. As a user I am prompted to register for an account so that I can create an account and receive the benefits of having a profile.
+
+- The register link in the navbar is the first prompt, if the user clicks to log in this page will prompt them to register for an account if they don't already have one:
+
+19. As a user I can log in so that I can auto-populate forms with my information on the site.
+
+20. As a user I can save my default billing/shipping details so that I can save time making my next purchase.
+
+<img width="800" alt="Screenshot 2023-03-30 at 23 28 01" src="https://user-images.githubusercontent.com/115544231/228968736-37371779-5683-430a-9c3b-8f2a4bb48dc1.png">
+
+
+- When a user first creates an account and logs in none of their information will be saved to their profile yet, but after completing the user profile form or making their first order then both the user profile form and the order form will be pre-filled with their details:
+
+
+<br>
+
+<strong> <h3> Epic 6 - Product Information: </h3></strong>
+
+<br>
+
+21. As an admin user I can add/edit/delete products to be displayed on the website.
+
+- The prducts detail functionality works in the same way as products, there are add product in the admin dropdown menu. add Product takes the admin user to the add product page, which is comprised of a form:
+
+- Else the user can delete the chosen product:
+
+
+<br>
+
+<strong> <h3> Epic 7 - Marketing: </h3></strong>
+
+<br>
+
+22. As a user I can sign up for a newsletter to receive up to date information regarding exhibitions and items for sale.
+
+- In the footer there is a MailChimp sign up form to allow the user to sign up:
+
+<img width="463" alt="Screenshot 2023-03-30 at 23 30 44" src="https://user-images.githubusercontent.com/115544231/228969141-86d4d6f8-60cf-44de-9cd6-7df3ad46da94.png">
+
+
+23. During the planning stage, SEO research was conducted to decide which keywords would help with SEO. 
+
+- The keywords were then added across the website content and added in the meta tags & descriptions.
+
+24. As an admin user I have created a Facebook shop page to increase traction to my website.
+
+- Facebook page for Webster can be found here:
+
+<img width="319" alt="Screenshot 2023-03-13 at 18 45 44" src="https://user-images.githubusercontent.com/115544231/228969218-276e3d4c-d972-43bf-8554-0c271b5abaf9.png">
 
 
 
@@ -645,3 +841,4 @@ pip3 freeze > requirements.txt
 - - The tutors at code institute have been a major help, guiding me through troubles and always being there to ask sometimes silly questions with a great attitude. Without them, I would have had a much more difficult time. Thank you!
 
 Finally thank you for viewing this project. I hope whoever you are, you are in good health and doing well. God Bless!
+
